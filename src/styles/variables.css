@@ -1,0 +1,103 @@
+/* ========================================
+   COLORS
+======================================== */
+
+:root {
+  /* Primary Brand Colors */
+  --color-primary: #E07A5F;
+  --color-primary-dark: #C96A52;
+
+  /* Background Colors */
+  --color-background: #FBE7D6;
+  --color-surface: #FFF8F3;
+  --color-white: #FFFFFF;
+
+  /* Text Colors */
+  --color-text-dark: #3D2C2E;
+  --color-text-light: #7A6A6A;
+  --color-text-white: #FFFFFF;
+
+  /* Accent Colors */
+  --color-accent: #F2C6A0;
+  --color-border: #E8D5C4;
+
+  /* Status Colors */
+  --color-success: #4CAF50;
+  --color-error: #E53935;
+  --color-warning: #FFB300;
+
+
+
+  /* ========================================
+     TYPOGRAPHY
+  ======================================== */
+
+  --font-primary: "Poppins", sans-serif;
+
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 20px;
+  --font-size-xl: 28px;
+  --font-size-2xl: 40px;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  --line-height: 1.6;
+
+
+
+  /* ========================================
+     SPACING
+  ======================================== */
+
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 64px;
+
+
+
+  /* ========================================
+     BORDER RADIUS
+  ======================================== */
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 999px;
+
+
+
+  /* ========================================
+     SHADOWS
+  ======================================== */
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+
+
+  /* ========================================
+     TRANSITIONS
+  ======================================== */
+
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+
+
+
+  /* ========================================
+     LAYOUT
+  ======================================== */
+
+  --container-width: 1200px;
+  --navbar-height: 80px;
+}
