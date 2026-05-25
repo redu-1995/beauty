@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
-
+import Hero from "./Hero";
 export default function MainLayout() {
   return (
     /* 1. The Outer Page: This creates your full-screen soft peach canvas background */
@@ -15,6 +15,7 @@ export default function MainLayout() {
         
         {/* The main page content from your router renders here */}
         <main className="flex-1 w-full">
+          <Hero/>
           <Outlet />
         </main>
 
