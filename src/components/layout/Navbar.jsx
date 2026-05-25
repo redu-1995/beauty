@@ -5,6 +5,7 @@ import logoImg from "../../assets/images/logo/logo.png";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showCategories, setShowCategories] = useState(false);
+  const [mobileCategoriesOpen, setMobileCategoriesOpen] = useState(false);
 
   return (
     <nav className="w-full bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50 border-b border-[#F3E3D3]">
@@ -58,44 +59,43 @@ export default function Navbar() {
           </li>
 
           {/* Categories Dropdown */}
-          <li
-            className="relative"
-            onMouseEnter={() => setShowCategories(true)}
-            onMouseLeave={() => setShowCategories(false)}
-          >
-            <button className="flex items-center gap-1 text-[#E07A5F] hover:text-[#4A3B32] transition duration-300">
-              Categories
-              <ChevronDown size={18} />
-            </button>
+          <li className="relative group py-2">
 
-            {/* Dropdown Menu */}
-            {showCategories && (
-              <div className="absolute top-10 left-0 w-52 bg-white rounded-2xl shadow-xl border border-[#F3E3D3] py-3 overflow-hidden">
-                
-                <a
-                  href="/skincare"
-                  className="block px-5 py-3 text-[#4A3B32] hover:bg-[#FBE7D6] transition"
-                >
-                  Skincare
-                </a>
+  {/* Categories Button */}
+  <button className="flex items-center gap-1 text-[#E07A5F] hover:text-[#4A3B32] transition duration-300">
+    Categories
 
-                <a
-                  href="/haircare"
-                  className="block px-5 py-3 text-[#4A3B32] hover:bg-[#FBE7D6] transition"
-                >
-                  Haircare
-                </a>
+    <ChevronDown
+      size={18}
+      className="transition-transform duration-300 group-hover:rotate-180"
+    />
+  </button>
 
-                <a
-                  href="/makeup"
-                  className="block px-5 py-3 text-[#4A3B32] hover:bg-[#FBE7D6] transition"
-                >
-                  Makeup
-                </a>
-              </div>
-            )}
-          </li>
+  {/* Dropdown */}
+  <div className="absolute top-full left-0 mt-2 w-52 bg-white rounded-2xl shadow-xl border border-[#F3E3D3] py-3 overflow-hidden opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+    
+    <a
+      href="/skincare"
+      className="block px-5 py-3 text-[#4A3B32] hover:bg-[#FBE7D6] transition"
+    >
+      Skincare
+    </a>
 
+    <a
+      href="/haircare"
+      className="block px-5 py-3 text-[#4A3B32] hover:bg-[#FBE7D6] transition"
+    >
+      Haircare
+    </a>
+
+    <a
+      href="/makeup"
+      className="block px-5 py-3 text-[#4A3B32] hover:bg-[#FBE7D6] transition"
+    >
+      Makeup
+    </a>
+  </div>
+</li>
           <li>
             <a
               href="/about"
@@ -172,20 +172,36 @@ export default function Navbar() {
             </li>
 
             {/* Mobile Categories */}
-            <li className="flex flex-col gap-3">
-              
-              <span className="flex items-center gap-2 text-[#E07A5F]">
-                Categories
-                <ChevronDown size={18} />
-              </span>
+            <li>
 
-              <div className="ml-4 flex flex-col gap-3 text-[#4A3B32]">
-                <a href="/skincare">Skincare</a>
-                <a href="/haircare">Haircare</a>
-                <a href="/makeup">Makeup</a>
-              </div>
-            </li>
+  {/* Categories Button */}
+  <button
+    onClick={() =>
+      setMobileCategoriesOpen(!mobileCategoriesOpen)
+    }
+    className="flex items-center justify-between w-full text-[#E07A5F]"
+  >
+    <span>Categories</span>
 
+    <ChevronDown
+      size={18}
+      className={`transition-transform duration-300 ${
+        mobileCategoriesOpen ? "rotate-180" : ""
+      }`}
+    />
+  </button>
+
+  {/* Dropdown */}
+  {mobileCategoriesOpen && (
+    <div className="mt-4 ml-4 flex flex-col gap-4 text-[#4A3B32]">
+      <a href="/skincare">Skincare</a>
+
+      <a href="/haircare">Haircare</a>
+
+      <a href="/makeup">Makeup</a>
+    </div>
+  )}
+</li>
             <li>
               <a
                 href="/about"
