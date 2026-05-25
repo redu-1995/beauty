@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Home from "../pages/Home";
+import MainLayout from "../components/layout/MainLayout";
 import Skincare from "../pages/Skincare"
 import Haircare from "../pages/Haircare"
 import Makeup from "../pages/Makeup"
@@ -13,6 +14,7 @@ function AppRoutes(){
     return(
         <BrowserRouter>
           <Routes>
+            <Route element={<MainLayout />}>
              <Route path="/" element = {<Home />} />
              <Route path="/skincare" element = {<Skincare />} />
              <Route path="/haircare" element = {<Haircare />} />
@@ -21,7 +23,7 @@ function AppRoutes(){
              <Route path="/cart" element = {<CartPage />} />
              <Route path="/checkout" element = {<CheckoutPage />} />
              <Route path="*" element = {<NotFound />} />
-             
+        </Route> 
           </Routes>
         </BrowserRouter>
     )
