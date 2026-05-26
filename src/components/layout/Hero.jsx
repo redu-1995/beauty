@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
         
         {/* Left Column: Text Content (Occupies 7/12 cols on desktop) */}
-        <div className="md:col-span-7 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
+        <div className="md:col-span-7 flex flex-col items-center md:items-start md:text-left md:text-left space-y-6">
           
           {/* Main Display Heading */}
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#4A3B32] font-serif leading-tight max-w-xl">

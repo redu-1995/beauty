@@ -43,7 +43,7 @@ export default function Navbar() {
           <li>
             <a
               href="/"
-              className="text-[#FF40C4] relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FF40C4] hover:after:w-full after:transition-all after:duration-300"
+              className="text-[#E07A5F] relative after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-[2px] after:bg-[#FF40C4] hover:after:w-full after:transition-all after:duration-300"
             >
               Home
             </a>
@@ -157,7 +157,7 @@ export default function Navbar() {
           <ul className="flex flex-col gap-5 text-[16px] font-medium">
             
             <li>
-              <a href="/" className="text-[#FF40C4]">
+              <a href="/" className="text-[#E07A5F]">
                 Home
               </a>
             </li>
