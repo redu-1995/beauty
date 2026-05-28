@@ -10,6 +10,11 @@ import CartPage from "../pages/CartPage"
 import CheckoutPage from "../pages/CheckoutPage"
 import NotFound from "../pages/NotFound"
 import Products from "../pages/Products";
+// Import your new categories page container
+import Categories from "../pages/Categories";
+
+// Inside your main Route element stream stack block
+
 
 function AppRoutes(){
     return(
@@ -25,6 +30,7 @@ function AppRoutes(){
              <Route path="/cart" element = {<CartPage />} />
              <Route path="/checkout" element = {<CheckoutPage />} />
              <Route path="*" element = {<NotFound />} />
+             <Route path="/categories" element={<Categories />} />
         </Route> 
           </Routes>
         </BrowserRouter>
