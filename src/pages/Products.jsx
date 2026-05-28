@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ProductCard from "../components/cards/ProductCard";
-// 💡 Import your brand new structured datasets here
 import { PRODUCTS_BY_TYPE, ALL_PRODUCTS } from "../data/products";
+import ProductCarousel from "../components/sections/ProductCarousel";
 
 export default function Products() {
   const [sortOpen, setSortOpen] = useState(false);
@@ -26,7 +26,7 @@ export default function Products() {
           Explore Skincare, Makeup, Perfumes and self-care essentials
         </p>
       </div>
-
+  
       <div className="max-w-7xl mx-auto w-full px-4 md:px-6 py-6">
         
         {/* Top Control Action Bar */}
@@ -134,6 +134,7 @@ export default function Products() {
 
         </div>
       </div>
+        <ProductCarousel />
     </div>
   );
 }
