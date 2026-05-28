@@ -9,6 +9,7 @@ import ProductDetails from "../pages/ProductDetails"
 import CartPage from "../pages/CartPage"
 import CheckoutPage from "../pages/CheckoutPage"
 import NotFound from "../pages/NotFound"
+import Products from "../pages/Products";
 
 function AppRoutes(){
     return(
@@ -18,6 +19,7 @@ function AppRoutes(){
              <Route path="/" element = {<Home />} />
              <Route path="/skincare" element = {<Skincare />} />
              <Route path="/haircare" element = {<Haircare />} />
+             <Route path="/products" element={<Products />} /> 
              <Route path="/makeup" element = {<Makeup />} />
              <Route path="/product/:id" element = {<ProductDetails />} />
              <Route path="/cart" element = {<CartPage />} />
