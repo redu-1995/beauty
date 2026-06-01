@@ -1,78 +1,135 @@
 // src/components/layout/Navbar.jsx
+
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import logoImg from "../../assets/images/logo/logo.png"; // Adjust path to your logo asset
+import logoImg from "../../assets/images/logo/logo.png";
 
 export default function Navbar() {
   return (
-    <nav className="w-full bg-white px-6 py-4 flex items-center justify-between border-b border-gray-100">
-      
-      {/* Brand Logo & Name */}
-      <Link to="/" className="flex items-center gap-3 group">
-        <img 
-          src={logoImg} 
-          alt="YV. Beauty Logo" 
-          className="w-10 h-10 rounded-full object-cover"
-        />
-        <div className="flex flex-col leading-tight">
-          <span className="font-serif font-bold text-lg text-[#4A3B32]">Beauty</span>
-          <span className="text-[9px] uppercase tracking-widest text-[#A47E6C] font-semibold">Cosmetics</span>
-        </div>
-      </Link>
+    <nav className="w-full bg-white border-b border-[#F1E7DE]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex items-center justify-between">
 
-      {/* Navigation Menu Links */}
-      <div className="flex items-center gap-6 md:gap-8 text-xs font-semibold">
-        <NavLink 
-          to="/" 
-          className={({ isActive }) => 
-            `transition-colors duration-200 ${isActive ? "text-[#E07A5F]" : "text-[#4A3B32] hover:text-[#E07A5F]"}`
-          }
-        >
-          Home
-        </NavLink>
-        
-        <NavLink 
-          to="/products" 
-          className={({ isActive }) => 
-            `transition-colors duration-200 ${isActive ? "text-[#E07A5F]" : "text-[#4A3B32] hover:text-[#E07A5F]"}`
-          }
-        >
-          Shop/Products
-        </NavLink>
+        {/* Logo */}
+        <Link to="/" className="flex items-center gap-3">
+          <img
+            src={logoImg}
+            alt="YV. Beauty Logo"
+            className="w-12 h-12 rounded-full object-cover"
+          />
 
-        {/* 🟢 Direct static Link to Categories Page with NO dropdown mechanics */}
-        <NavLink 
-          to="/categories" 
-          className={({ isActive }) => 
-            `transition-colors duration-200 ${isActive ? "text-[#E07A5F]" : "text-[#4A3B32] hover:text-[#E07A5F]"}`
-          }
-        >
-          Categories
-        </NavLink>
+          <div className="flex flex-col leading-tight">
+            <span className="font-serif font-bold text-xl text-[#4A3B32]">
+              YV. Beauty
+            </span>
 
-        <NavLink 
-          to="/about" 
-          className={({ isActive }) => 
-            `transition-colors duration-200 ${isActive ? "text-[#E07A5F]" : "text-[#4A3B32] hover:text-[#E07A5F]"}`
-          }
-        >
-          About us
-        </NavLink>
-      </div>
-
-      {/* Right Side Action Icons (Search & Cart Badge) */}
-      <div className="flex items-center gap-4">
-        <button className="text-[#4A3B32] hover:text-[#E07A5F] transition cursor-pointer" aria-label="Search">
-          <i className="fa-solid fa-magnifying-glass text-sm"></i>
-        </button>
-        <Link to="/cart" className="relative text-[#4A3B32] hover:text-[#E07A5F] transition" aria-label="Shopping Cart">
-          <i className="fa-solid fa-bag-shopping text-sm"></i>
-          <span className="absolute -top-1.5 -right-1.5 bg-[#E07A5F] text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center scale-90">
-            2
-          </span>
+            <span className="text-[10px] uppercase tracking-[0.25em] text-[#A47E6C] font-semibold">
+              Premium Cosmetics
+            </span>
+          </div>
         </Link>
-      </div>
 
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium">
+
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#E07A5F]"
+                : "text-[#4A3B32] hover:text-[#E07A5F] transition"
+            }
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/products"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#E07A5F]"
+                : "text-[#4A3B32] hover:text-[#E07A5F] transition"
+            }
+          >
+            Shop
+          </NavLink>
+
+          <NavLink
+            to="/categories"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#E07A5F]"
+                : "text-[#4A3B32] hover:text-[#E07A5F] transition"
+            }
+          >
+            Categories
+          </NavLink>
+
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#E07A5F]"
+                : "text-[#4A3B32] hover:text-[#E07A5F] transition"
+            }
+          >
+            About
+          </NavLink>
+
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "text-[#E07A5F]"
+                : "text-[#4A3B32] hover:text-[#E07A5F] transition"
+            }
+          >
+            Contact
+          </NavLink>
+        </div>
+
+        {/* Right Actions */}
+        <div className="flex items-center gap-4">
+
+          {/* CTA Button */}
+          <Link
+            to="/products"
+            className="hidden lg:flex items-center bg-[#E07A5F] text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-[#d0694e] transition"
+          >
+            Shop Now
+          </Link>
+
+          {/* Search */}
+          <button
+            className="text-[#4A3B32] hover:text-[#E07A5F] transition"
+            aria-label="Search"
+          >
+            <i className="fa-solid fa-magnifying-glass text-base"></i>
+          </button>
+
+          {/* Cart */}
+          <Link
+            to="/cart"
+            className="relative text-[#4A3B32] hover:text-[#E07A5F] transition"
+            aria-label="Shopping Cart"
+          >
+            <i className="fa-solid fa-bag-shopping text-base"></i>
+
+            <span className="absolute -top-2 -right-2 bg-[#E07A5F] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+              2
+            </span>
+          </Link>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-[#4A3B32] hover:text-[#E07A5F] transition"
+            aria-label="Open Menu"
+          >
+            <i className="fa-solid fa-bars text-lg"></i>
+          </button>
+
+        </div>
+
+      </div>
     </nav>
   );
 }
