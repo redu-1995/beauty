@@ -17,9 +17,9 @@ export default function Hero() {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#4A3B32] font-serif leading-tight max-w-xl">
+         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#4A3B32] font-serif leading-tight max-w-2xl">
             Discover Premium Beauty Products
-            <span className="block mt-2">
+            <span className="block">
               For Every Style
             </span>
           </h1>
@@ -77,7 +77,7 @@ export default function Hero() {
 
         {/* Right Image */}
         <div className="md:col-span-6 flex justify-center md:justify-end">
-          <div className="relative w-full max-w-lg lg:max-w-xl">
+          <div className="relative w-full max-w-xl lg:max-w-2xl">
             <img
               src={heroImage}
               alt="Premium Beauty Showcase"
