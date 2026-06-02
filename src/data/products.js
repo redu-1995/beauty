@@ -1,5 +1,10 @@
-
+import HydroCloricImg from "../assets/images/products/HydroCloricImg.webp"
 import serumImg from "../assets/images/products/serumImg.png"; 
+import VitaminCImg from "../assets/images/products/VitaminCImg.webp"
+import MatteLiquidImg from "../assets/images/products/MatteLiquidImg.webp"
+import ValvetLipImg from "../assets/images/products/ValvetLipImg.webp"
+import ArganOilImg from "../assets/images/products/ArganOilImg.webp"
+import EtherealImg from "../assets/images/products/EtherealImg.webp"
 
 export const PRODUCTS_BY_TYPE = {
   skincare: [
@@ -8,7 +13,7 @@ export const PRODUCTS_BY_TYPE = {
       category: "Skincare",
       name: "Vitamin C Brightening Serum",
       price: "1400",
-      image: serumImg,
+      image: VitaminCImg,
       description: "Brightens skin tone and reduces dark spots."
     },
     {
@@ -16,7 +21,7 @@ export const PRODUCTS_BY_TYPE = {
       category: "Skincare",
       name: "Hyaluronic Acid Hydrating Cream",
       price: "1650",
-      image: serumImg,
+      image: HydroCloricImg,
       description: "Deeply hydrates and plumps the skin canvas."
     }
   ],
@@ -26,7 +31,7 @@ export const PRODUCTS_BY_TYPE = {
       category: "Makeup",
       name: "Matte Liquid Foundation",
       price: "1800",
-      image: serumImg,
+      image: MatteLiquidImg,
       description: "Flawless full coverage with a natural matte finish."
     },
     {
@@ -34,7 +39,7 @@ export const PRODUCTS_BY_TYPE = {
       category: "Makeup",
       name: "Velvet Lip Tint",
       price: "950",
-      image: serumImg,
+      image: ValvetLipImg,
       description: "Long-lasting, weightless terracotta lip shade."
     }
   ],
@@ -44,7 +49,7 @@ export const PRODUCTS_BY_TYPE = {
       category: "Haircare",
       name: "Argan Oil Repair Shampoo",
       price: "1200",
-      image: serumImg,
+      image: ArganOilImg,
       description: "Restores moisture and shine to damaged hair strands."
     }
   ],
@@ -54,7 +59,7 @@ export const PRODUCTS_BY_TYPE = {
       category: "Perfumes",
       name: "Ethereal Bloom Eau de Parfum",
       price: "3200",
-      image: serumImg,
+      image: EtherealImg,
       description: "A luxury, long-lasting floral and warm wood scent."
     }
   ]
