@@ -1,19 +1,13 @@
+// src/pages/Categories.jsx
 import React from "react";
 import CategoryCollectionCard from "../components/cards/CategoryCollectionCard";
 
-// 💡 Import your brand new popular products dataset here
-import { POPULAR_PRODUCTS_BY_CATEGORY } from "../data/categoriesPreviewData";
+// 🟢 Clean, centralized data imports
+import { MAIN_COLLECTIONS, POPULAR_PRODUCTS_BY_CATEGORY } from "../data/categoriesPreviewData";
 
-// Assets
+// Static Banner/Hero Assets
 import categoryHeaderImg from "../assets/images/products/serumImg.png"; 
-import placeholderImg from "../assets/images/products/serumImg.png";
-
-const MAIN_COLLECTIONS = [
-  { id: "skin", title: "Skincare", description: "Nourishing products for healthy glowing skin.", image: placeholderImg },
-  { id: "make", title: "Makeup", description: "Everyday beauty essentials for every custom look.", image: placeholderImg },
-  { id: "perf", title: "Perfumes", description: "Elegant fragrances with deep, lasting impressions.", image: placeholderImg },
-  { id: "hair", title: "Hair Care", description: "Nourishing essential oils and gentle shampoos.", image: placeholderImg }
-];
+import ethiopianBotanicalImg from "../assets/images/products/serumImg.png"; // Point this to your local botanical art if available
 
 export default function Categories() {
   return (
@@ -30,21 +24,25 @@ export default function Categories() {
           </p>
         </div>
         <div className="h-48 md:h-64 w-full">
-          <img src={categoryHeaderImg} alt="Beauty showcase" className="w-full h-full object-cover" />
+          <img 
+            src={categoryHeaderImg} 
+            alt="Beauty showcase header background" 
+            className="w-full h-full object-cover" 
+          />
         </div>
       </div>
 
       {/* Main Inner Shell Wrapper */}
       <div className="max-w-6xl mx-auto w-full px-4 md:px-6 py-12 space-y-12">
         
-        {/* 2. Main 4-Collection Feature Blocks Grid */}
+        {/* 2. Main 4-Collection Feature Blocks Grid (Now pulling correct images from data file) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8">
           {MAIN_COLLECTIONS.map((cat) => (
             <CategoryCollectionCard 
               key={cat.id}
               title={cat.title}
               description={cat.description}
-              image={cat.image}
+              image={cat.image} // 🟢 Pulling the accurate imported asset mapping
               onClick={() => console.log(`Routing directly to ${cat.title} category filter`)}
             />
           ))}
@@ -57,7 +55,11 @@ export default function Categories() {
             <p className="text-sm font-medium text-[#E07A5F] tracking-wide">Discover the natural secrets of Korarima and Enset</p>
           </div>
           <div className="w-full sm:w-48 h-20 rounded-xl overflow-hidden bg-[#FFF5EB] flex items-center justify-center p-2">
-            <img src={placeholderImg} alt="Ethiopian Botanicals" className="max-h-full max-w-full object-contain" />
+            <img 
+              src={ethiopianBotanicalImg} 
+              alt="Ethiopian Botanicals showcase element" 
+              className="max-h-full max-w-full object-contain" 
+            />
           </div>
         </div>
 
@@ -75,7 +77,7 @@ export default function Categories() {
                   {categoryName}
                 </h4>
                 
-                {/* Nested vertical listing layout stack tracking all 10 custom elements */}
+                {/* Nested vertical listing layout stack */}
                 <div className="space-y-2.5 max-h-[480px] overflow-y-auto pr-1 scrollbar-thin">
                   {POPULAR_PRODUCTS_BY_CATEGORY[categoryName].map((product) => (
                     <div 
@@ -87,12 +89,13 @@ export default function Categories() {
                       <span className="text-[10px] font-semibold text-[#705A4F] truncate max-w-[70%] group-hover:text-[#4A3B32] transition">
                         {product.name}
                       </span>
+                      
                       {/* Right side graphical thumbnail element wrapper */}
                       <div className="w-12 h-full bg-white rounded-lg p-0.5 flex items-center justify-center overflow-hidden shrink-0">
                         <img 
                           src={product.image} 
                           alt={product.name} 
-                          className="max-h-full max-w-full object-contain mix-blend-multiply opacity-85 group-hover:scale-105 transition duration-300" 
+                          className="max-h-full max-w-full object-contain mix-blend-multiply opacity-[0.85] group-hover:scale-105 transition duration-300" 
                         />
                       </div>
                     </div>
