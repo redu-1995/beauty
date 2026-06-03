@@ -12,7 +12,7 @@ import NotFound from "../pages/NotFound"
 import Products from "../pages/Products";
 import Categories from "../pages/Categories";
 import About from "../pages/About.jsx"
-
+import Contact from "../pages/Contact.jsx"
 
 // Inside your main Route element stream stack block
 
@@ -33,6 +33,7 @@ function AppRoutes(){
              <Route path="*" element = {<NotFound />} />
              <Route path="/categories" element={<Categories />} />
             <Route path="/about" element={<About />} />
+             <Route path="/contact" element={<Contact />} />
         </Route> 
           </Routes>
         </BrowserRouter>
