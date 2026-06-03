@@ -78,7 +78,7 @@ export default function Categories() {
                 </h4>
                 
                 {/* Nested vertical listing layout stack */}
-                <div className="space-y-2.5 max-h-[480px] overflow-y-auto pr-1 scrollbar-thin">
+                <div className="grid gap-3">
                   {POPULAR_PRODUCTS_BY_CATEGORY[categoryName].map((product) => (
                     <div 
                       key={product.id} 
