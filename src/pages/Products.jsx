@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/cards/ProductCard";
-import ProductCarousel from "../components/sections/ProductCarousel";
+import ProductCarousel from "../components/Modules/ProductCarousel";
 import { PRODUCTS_BY_TYPE, ALL_PRODUCTS } from "../data/products";
 
 export default function Products() {

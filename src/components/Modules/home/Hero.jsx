@@ -1,7 +1,7 @@
 import React from "react";
 // 1. Import Link from your router kit to drive navigation actions
 import { Link } from "react-router-dom";
-import heroImage from "../../assets/images/hero/hero.png";
+import heroImage from "../../../assets/images/hero/hero.png";
 
 export default function Hero() {
   return (

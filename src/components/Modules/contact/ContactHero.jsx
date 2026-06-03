@@ -1,5 +1,5 @@
 import React from "react";
-import contactHeroImg from "../../assets/images/contact/serumImg.png"; // Adjust path to your asset
+import contactHeroImg from "../../../assets/images/contact/serumImg.png"; // Adjust path to your asset
 
 export default function ContactHero() {
   return (

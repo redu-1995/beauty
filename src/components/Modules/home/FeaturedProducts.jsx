@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ALL_PRODUCTS } from "../../data/products";
+import { ALL_PRODUCTS } from "../../../data/products"
 
 export default function FeaturedProducts() {
   const featuredProducts = ALL_PRODUCTS.slice(0, 4);
