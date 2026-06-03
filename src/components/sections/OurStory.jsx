@@ -1,6 +1,6 @@
 import React from "react";
-import storyGroupImg from "../../assets/images/about/about-story.png"; // Your glowing lifestyle group image
-import serumThumb from "../../assets/images/products/serumImg.png";     // Reuse your existing serum/product image
+import storyGroupImg from "../../assets/heroImg.png"; // Your glowing lifestyle group image
+import serumThumb from "../../assets/heroImg.png";     // Reuse your existing serum/product image
 
 export default function OurStory() {
   // Mini category items representing what you select
