@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Home from "../pages/Home";
 import MainLayout from "../components/layout/MainLayout";
-import Skincare from "../pages/Skincare"
+import SkincarePage from "../pages/Skincare.jsx";
 import Haircare from "../pages/Haircare"
 import Makeup from "../pages/Makeup"
 import ProductDetails from "../pages/ProductDetails"
@@ -23,17 +23,19 @@ function AppRoutes(){
           <Routes>
             <Route element={<MainLayout />}>
              <Route path="/" element = {<Home />} />
-             <Route path="/skincare" element = {<Skincare />} />
-             <Route path="/haircare" element = {<Haircare />} />
-             <Route path="/products" element={<Products />} /> 
-             <Route path="/makeup" element = {<Makeup />} />
+             <Route path="/skincare" element={<SkincarePage />} />
+             <Route path="/makeup" element={<Makeup />} />
+             <Route path="/haircare" element={<Haircare />} />
+             <Route path="/products" element={<Products />} />
              <Route path="/product/:id" element = {<ProductDetails />} />
              <Route path="/cart" element = {<CartPage />} />
              <Route path="/checkout" element = {<CheckoutPage />} />
              <Route path="*" element = {<NotFound />} />
              <Route path="/categories" element={<Categories />} />
-            <Route path="/about" element={<About />} />
+             <Route path="/about" element={<About />} />
              <Route path="/contact" element={<Contact />} />
+
+
         </Route> 
           </Routes>
         </BrowserRouter>
