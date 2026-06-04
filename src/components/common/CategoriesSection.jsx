@@ -1,7 +1,7 @@
 // src/components/sections/CategoriesSection.jsx
 
 import React from "react";
-import CategoryCollectionCard from "../../cards/CategoryCollectionCard";
+import CategoryCollectionCard from "../cards/CategoryCollectionCard";
 
 import skincareImg from "../../../assets/images/categories/skincareImg.webp";
 import makeupImg from "../../../assets/images/categories/makeupImg.webp";

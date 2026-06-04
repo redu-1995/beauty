@@ -13,32 +13,35 @@ import ArganOilImg from "../assets/images/products/ArganOilImg.webp"
 import EtherealImg from "../assets/images/products/EtherealImg.webp"
 
 export const MAIN_COLLECTIONS = [
-  { 
-    id: "skin", 
-    title: "Skincare", 
-    description: "Nourishing products for healthy glowing skin.", 
-    image: skincareImg 
+  {
+    id: 1,
+    title: "Skincare",
+    description: "Premium skincare essentials",
+    image: skincareImg,
+    link: "/skincare",
   },
-  { 
-    id: "make", 
-    title: "Makeup", 
-    description: "Everyday beauty essentials for every custom look.", 
-    image: makeupImg 
+  {
+    id: 2,
+    title: "Makeup",
+    description: "Professional makeup collection",
+    image: makeupImg,
+    link: "/makeup",
   },
-  { 
-    id: "perf", 
-    title: "Perfumes", 
-    description: "Elegant fragrances with deep, lasting impressions.", 
-    image: perfumeImg 
+  {
+    id: 3,
+    title: "Haircare",
+    description: "Healthy hair solutions",
+    image: haircareImg,
+    link: "/haircare",
   },
-  { 
-    id: "hair", 
-    title: "Hair Care", 
-    description: "Nourishing essential oils and gentle shampoos.", 
-    image: haircareImg 
-  }
+  {
+    id: 4,
+    title: "Perfumes",
+    description: "Luxury fragrances",
+    image: perfumeImg,
+    link: "/perfumes",
+  },
 ];
-
 export const POPULAR_PRODUCTS_BY_CATEGORY = {
   "Skincare": [
     { id: "s1", name: "Vitamin C Brightening Serum", image: VitaminCImg },
