@@ -1,38 +1,9 @@
 import React from "react";
 import argan from  "../../../assets/images/products/ArganOilImg.webp"
-
+import { skincareProducts } from "../../../data/skincareData";
 export default function FeaturedSkincare() {
   // 4-8 Curated Premium Skincare Products Array
-  const featuredProducts = [
-    {
-      id: 1,
-      name: "Hydrating Hyaluronic Serum",
-      price: "1,200 ETB", // Standard Ethiopian Birr currency notation
-      tag: "Best Seller",
-      image: argan
-    },
-    {
-      id: 2,
-      name: "Gentle Oat Milk Cleanser",
-      price: "950 ETB",
-      tag: "New",
-      image: "/assets/images/products/ArganOilImg.webp"
-    },
-    {
-      id: 3,
-      name: "Ceramide Barrier Cream",
-      price: "1,450 ETB",
-      tag: "Top Rated",
-      image: "/assets/images/products/cream.png"
-    },
-    {
-      id: 4,
-      name: "Vitamin C Radiance Oil",
-      price: "1,600 ETB",
-      tag: "Glow",
-      image: "/assets/images/products/oil.png"
-    }
-  ];
+ const featuredProducts = skincareProducts.filter(product => product.isFeatured);
 
   const handleAddToCart = (productId) => {
     console.log(`Adding item ID ${productId} to cart feature slice state management`);
