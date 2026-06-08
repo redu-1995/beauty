@@ -1,5 +1,6 @@
 import React from "react";
 
+import skincareHero from "../../../assets/images/skinCare/skincareHero.png"
 export default function SkincareHero() {
   // Smooth scroll handler to jump users down to your upcoming product grid
   const handleScrollToProducts = () => {
@@ -59,7 +60,7 @@ export default function SkincareHero() {
             <div className="relative z-10 w-full max-w-md aspect-[4/5] bg-white border border-[#F1E7DE] p-3 rounded-3xl shadow-xs group">
               <div className="w-full h-full rounded-2xl overflow-hidden bg-[#FBE7D6]/20">
                 <img
-                  src="/assets/images/skincare/skincare-hero.png" // Placeholder target path for your asset folder setup
+                  src={skincareHero} // Placeholder target path for your asset folder setup
                   alt="Radiant skincare model showcasing natural glowing complexion"
                   className="w-full h-full object-cover grayscale-[5%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-out"
                   draggable="false"
