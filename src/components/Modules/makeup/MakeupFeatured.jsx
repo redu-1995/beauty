@@ -1,49 +1,7 @@
 import React, { useState } from "react";
 import MakeupCategoryFilters from "./MakeupCategoryFilters";
-
+import { globalProducts } from "../../../data/makeupData.js"
 // 📦 Sample Premium Makeup Dataset Matrix 
-const makeupProductsData = [
-  {
-    id: "mk-01",
-    name: "Velvet Matte Weightless Foundation",
-    category: "face",
-    price: "1,250",
-    image: "https://images.unsplash.com/photo-1631730359575-38e4755d772b?q=80&w=600",
-    tag: "Bestseller"
-  },
-  {
-    id: "mk-02",
-    name: "Ultra-Pigmented 12-Color Eyeshadow Palette",
-    category: "eyes",
-    price: "1,400",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=600",
-    tag: "New"
-  },
-  {
-    id: "mk-03",
-    name: "Satin Hydrating Lip Terracotta",
-    category: "lips",
-    price: "850",
-    image: "https://images.unsplash.com/photo-1586495777744-4413f21062fa?q=80&w=600",
-    tag: "Trending"
-  },
-  {
-    id: "mk-04",
-    name: "Professional Vegan Face Contour Brush",
-    category: "brushes",
-    price: "450",
-    image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=600",
-    tag: "Essential"
-  },
-  {
-    id: "mk-05",
-    name: "Glow Serum Foundation Tint (SPF 30)",
-    category: "hybrid",
-    price: "1,650",
-    image: "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=600",
-    tag: "Skin-First"
-  }
-];
 
 export default function MakeupFeatured() {
   // 1. Setup Active Category Filter Track State
@@ -55,8 +13,8 @@ export default function MakeupFeatured() {
 
   // 2. Filter the Products Dynamically Based on Selection State
   const displayedProducts = activeCategory === "all" 
-    ? makeupProductsData 
-    : makeupProductsData.filter(product => product.category === activeCategory);
+    ? globalProducts 
+    : globalProducts.filter(product => product.category === activeCategory);
 
   const handleInstantOrder = (product, platform) => {
     const baseMessage = 
