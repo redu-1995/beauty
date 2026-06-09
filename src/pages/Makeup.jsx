@@ -4,6 +4,9 @@ import MakeupCategoryFilters from "../components/modules/makeup/MakeupCategoryFi
 import MakeupFeatured from "../components/modules/makeup/MakeupFeatured";
 import MakeupBestSellers from "../components/modules/makeup/MakeupBestSellers";
 import MakeupProductsGrid from "../components/modules/makeup/MakeupProductsGrid";
+import MakeupShopByConcern from "../components/modules/makeup/MakeupShopByConcern";
+import MakeupTrending from "../components/modules/makeup/MakeupTrending";
+import MakeupTestimonials from "../components/modules/makeup/MakeupTestimonials";
 function Makeup() {
 
   return (
@@ -12,6 +15,9 @@ function Makeup() {
     <MakeupFeatured/>
     <MakeupBestSellers/>
     <MakeupProductsGrid/>
+    <MakeupShopByConcern/>
+    <MakeupTrending/>
+    <MakeupTestimonials/>
     </div>
   );
 }
