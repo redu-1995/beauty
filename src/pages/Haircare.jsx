@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import HaircareHero from "../components/modules/haircare/HaircareHero";
 import HaircareCategoryFilter from "../components/modules/haircare/HaircareCategoryFilter";
 import HaircareProductsGrid from "../components/modules/haircare/HaircareProductsGrid";
-
+import FeaturedHaircareProducts from "../components/modules/haircare/FeaturedHaircareProducts";
+import HairConcernCards from "../components/modules/haircare/HairConcernCards";
+import HairRoutineGuide from "../components/modules/haircare/HairRoutineGuide";
+import  HairTransformationShowcase from "../components/modules/haircare/HairTransformationShowcase";
+import CustomerReviews from "../components/modules/haircare/CustomerReviews";
+import HaircareFAQ from "../components/modules/haircare/HaircareFAQ";
+import ConsultationCTA from "../components/modules/haircare/ConsultationCTA";
 function Haircare() {
   const [activeCategory, setActiveCategory] = useState("all");
 
@@ -17,6 +23,13 @@ function Haircare() {
         activeCategory={activeCategory}
         activeType="all"
       />
+      <FeaturedHaircareProducts/>
+      <HairConcernCards/>
+      <HairRoutineGuide/>
+      <HairTransformationShowcase/>
+      <CustomerReviews/>
+      <HaircareFAQ/>
+      <ConsultationCTA/>
     </div>
   );
 }
