@@ -13,6 +13,7 @@ import Products from "../pages/Products";
 import Categories from "../pages/Categories";
 import About from "../pages/About.jsx"
 import Contact from "../pages/Contact.jsx"
+import Perfume from "../pages/Perfume.jsx";
 
 // Inside your main Route element stream stack block
 
@@ -34,6 +35,7 @@ function AppRoutes(){
              <Route path="/categories" element={<Categories />} />
              <Route path="/about" element={<About />} />
              <Route path="/contact" element={<Contact />} />
+             <Route path="/perfumes" element={<Perfume />} />
 
 
         </Route> 
