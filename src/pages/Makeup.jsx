@@ -1,12 +1,12 @@
 import React from "react";
-import MakeupHero from "../components/modules/makeup/MakeupHero";
-import MakeupCategoryFilters from "../components/modules/makeup/MakeupCategoryFilters";
-import MakeupFeatured from "../components/modules/makeup/MakeupFeatured";
-import MakeupBestSellers from "../components/modules/makeup/MakeupBestSellers";
-import MakeupProductsGrid from "../components/modules/makeup/MakeupProductsGrid";
-import MakeupShopByConcern from "../components/modules/makeup/MakeupShopByConcern";
-import MakeupTrending from "../components/modules/makeup/MakeupTrending";
-import MakeupTestimonials from "../components/modules/makeup/MakeupTestimonials";
+import MakeupHero from "../components/Modules/makeup/MakeupHero.jsx";
+import MakeupCategoryFilters from "../components/Modules/makeup/MakeupCategoryFilters.jsx";
+import MakeupFeatured from "../components/Modules/makeup/MakeupFeatured.jsx";
+import MakeupBestSellers from "../components/Modules/makeup/MakeupBestSellers.jsx";
+import MakeupProductsGrid from "../components/Modules/makeup/MakeupProductsGrid.jsx";
+import MakeupShopByConcern from "../components/Modules/makeup/MakeupShopByConcern.jsx";
+import MakeupTrending from "../components/Modules/makeup/MakeupTrending.jsx";
+import MakeupTestimonials from "../components/Modules/makeup/MakeupTestimonials.jsx";
 function Makeup() {
 
   return (

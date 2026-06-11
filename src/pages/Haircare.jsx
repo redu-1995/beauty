@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import HaircareHero from "../components/modules/haircare/HaircareHero";
-import HaircareCategoryFilter from "../components/modules/haircare/HaircareCategoryFilter";
-import HaircareProductsGrid from "../components/modules/haircare/HaircareProductsGrid";
-import FeaturedHaircareProducts from "../components/modules/haircare/FeaturedHaircareProducts";
-import HairRoutineGuide from "../components/modules/haircare/HairRoutineGuide";
-import CustomerReviews from "../components/modules/haircare/CustomerReviews";
-import HaircareFAQ from "../components/modules/haircare/HaircareFAQ";
-import ConsultationCTA from "../components/modules/haircare/ConsultationCTA";
+import HaircareHero from "../components/Modules/haircare/HaircareHero.jsx";
+import HaircareCategoryFilter from "../components/Modules/haircare/HaircareCategoryFilter.jsx";
+import HaircareProductsGrid from "../components/Modules/haircare/HaircareProductsGrid.jsx";
+import FeaturedHaircareProducts from "../components/Modules/haircare/FeaturedHaircareProducts.jsx";
+import HairRoutineGuide from "../components/Modules/haircare/HairRoutineGuide.jsx";
+import CustomerReviews from "../components/Modules/haircare/CustomerReviews.jsx";
+import HaircareFAQ from "../components/Modules/haircare/HaircareFAQ.jsx";
+import ConsultationCTA from "../components/Modules/haircare/ConsultationCTA.jsx";
 function Haircare() {
   const [activeCategory, setActiveCategory] = useState("all");
 
