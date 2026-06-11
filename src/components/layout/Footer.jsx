@@ -1,5 +1,6 @@
 import React from "react";
-import logoImg from "../../assets/images/logo/logo.png";
+import { Link } from "react-router-dom"; // Imported Link for SPA routing
+
 
 export default function Footer() {
   return (
@@ -11,13 +12,6 @@ export default function Footer() {
         {/* Column 1: Brand Info & Social Connect Matrix */}
         <div className="lg:col-span-4 space-y-4 text-left">
           <div className="flex items-center gap-3">
-            <div className="w-11 h-11 rounded-full overflow-hidden bg-white p-0.5 shadow-xs">
-              <img
-                src={logoImg}
-                alt="YV. Beauty Logo"
-                className="w-full h-full object-cover rounded-full"
-              />
-            </div>
 
             <span className="text-lg sm:text-xl font-bold font-serif tracking-wide">
               YV. Beauty
@@ -29,11 +23,10 @@ export default function Footer() {
             your daily self-care routine and highlight your natural radiance.
           </p>
 
-          {/* Social Icons Media Row Actions */}
+          {/* Social Icons Media Row Actions (Kept original as requested) */}
           <div className="flex gap-3 pt-1">
-            {/* WhatsApp Link Channel */}
             <a
-              href="https://wa.me/2519XXXXXXXX" // Swap with your actual WhatsApp business number link
+              href="https://wa.me/2519XXXXXXXX" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#E07A5F] shadow-2xs cursor-pointer hover:bg-[#E07A5F] hover:text-white transition duration-300"
@@ -42,7 +35,6 @@ export default function Footer() {
               <i className="fa-brands fa-whatsapp text-base"></i>
             </a>
 
-            {/* Telegram Link Channel */}
             <a
               href="https://t.me/YVbeauty1" 
               target="_blank"
@@ -53,9 +45,8 @@ export default function Footer() {
               <i className="fa-brands fa-telegram text-base"></i>
             </a>
 
-            {/* Facebook Link Channel */}
             <a
-              href="https://facebook.com/YVBeauty" // Swap with your actual Facebook page path
+              href="https://facebook.com/YVBeauty" 
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#E07A5F] shadow-2xs cursor-pointer hover:bg-[#E07A5F] hover:text-white transition duration-300"
@@ -66,7 +57,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Column 2: Core Store Nav Link Matrix */}
+        {/* Column 2: Core Store Nav Link Matrix (Modified to use Link) */}
         <div className="lg:col-span-2 space-y-3 text-left">
           <h3 className="text-xs font-bold uppercase tracking-widest text-[#4A3B32]">
             Shop Collections
@@ -74,49 +65,49 @@ export default function Footer() {
 
           <ul className="space-y-2 text-sm font-medium">
             <li>
-              <a
-                href="/products"
+              <Link
+                to="/products"
                 className="text-[#705A4F] hover:text-[#E07A5F] transition duration-200"
               >
                 All Products
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/skincare"
+              <Link
+                to="/skincare"
                 className="text-[#705A4F] hover:text-[#E07A5F] transition duration-200"
               >
                 Skincare Vault
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/makeup"
+              <Link
+                to="/makeup"
                 className="text-[#705A4F] hover:text-[#E07A5F] transition duration-200"
               >
                 Makeup Cosmetics
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/perfumes"
+              <Link
+                to="/perfumes"
                 className="text-[#705A4F] hover:text-[#E07A5F] transition duration-200"
               >
                 Luxury Perfumes
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/haircare"
+              <Link
+                to="/haircare"
                 className="text-[#705A4F] hover:text-[#E07A5F] transition duration-200"
               >
                 Hair Care
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
 
-        {/* Column 3: Corporate Directory Nav Links */}
+        {/* Column 3: Corporate Directory Nav Links (Modified to use Link) */}
         <div className="lg:col-span-2 space-y-3 text-left">
           <h3 className="text-xs font-bold uppercase tracking-widest text-[#4A3B32]">
             Company
@@ -124,20 +115,20 @@ export default function Footer() {
 
           <ul className="space-y-2 text-sm font-medium">
             <li>
-              <a
-                href="/about"
+              <Link
+                to="/about"
                 className="text-[#705A4F] hover:text-[#E07A5F] transition duration-200"
               >
                 About Our House
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="/contact"
+              <Link
+                to="/contact"
                 className="text-[#705A4F] hover:text-[#E07A5F] transition duration-200"
               >
                 Contact & Support
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -166,12 +157,10 @@ export default function Footer() {
       <div className="border-t border-[#DFD3C3] bg-[#DFD3C3]/30 px-5 sm:px-6 py-5">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
 
-          {/* Dynamic Copyright Tracker */}
           <p className="text-xs font-medium text-[#705A4F] tracking-wide">
             &copy; {new Date().getFullYear()} YV. Beauty Collection Inc. All rights reserved.
           </p>
 
-          {/* Verified Store Trust Anchors */}
           <div className="flex flex-wrap items-center justify-center gap-2 text-[10px] sm:text-xs text-[#705A4F] font-bold tracking-wider uppercase opacity-80 select-none">
             <span>Direct Social Checkout</span>
             <div className="hidden sm:block h-3 w-px bg-[#4A3B32]/20"></div>
