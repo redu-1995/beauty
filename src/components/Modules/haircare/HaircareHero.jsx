@@ -1,5 +1,5 @@
 import React from "react";
-
+import HaircareHeroIMg from "../../../assets/images/categories/haircare_hero.png"; 
 export default function HaircareHero() {
   const handleScrollToProducts = () => {
     const productSection = document.getElementById("haircare-storefront");
@@ -44,7 +44,7 @@ export default function HaircareHero() {
           <div className="relative w-full max-w-md md:max-w-none aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-[#F2E3D5] bg-white p-3 shadow-xs group">
             <div className="w-full h-full rounded-[2rem] overflow-hidden bg-[#FFFBF7] relative">
               <img
-                src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=1000"
+                src={HaircareHeroIMg}
                 alt="Strong, Glossy, Healthy Hair Showcase Portfolio"
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-700"
                 draggable="false"

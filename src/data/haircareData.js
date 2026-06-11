@@ -29,7 +29,7 @@ export const globalHaircareProducts = [
     category: "shampoo",
     concern: "scalp",
     price: "780",
-    image: "https://images.unsplash.com/photo-1608248597481-496100c80836?q=80&w=600",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrv7YlLjxDnZLfj2M3nNLZvh5IJ7Js1Hna0Q&s",
     isFeatured: true,
     tag: "New"
   },
@@ -110,7 +110,7 @@ export const globalHaircareProducts = [
     category: "styling",
     concern: "split-ends",
     price: "890",
-    image: "https://images.unsplash.com/photo-1631730359575-38e4755d772b?q=80&w=600",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE2O7NhqBIZVcjcnjlmIj7XslIrlVvTP0UpQ&s",
     isFeatured: false,
     tag: "Essential"
   }

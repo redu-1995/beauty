@@ -1,8 +1,9 @@
+// src/components/cards/ProductCard.jsx
 import React from "react";
 
 export default function ProductCard({ image, category, name, price }) {
   // Target business channel contact handles
-  const BUSINESS_PHONE = "251912345678"; // Your actual business phone string 
+  const BUSINESS_PHONE = "25190000000"; // Your actual business phone string 
   const TELEGRAM_USERNAME = "YourBeautyShopHandle"; // Your premium cosmetic shop handle
 
   // Direct contact API redirection message handler
@@ -44,18 +45,18 @@ export default function ProductCard({ image, category, name, price }) {
           {name}
         </h3>
         <span className="font-sans font-bold text-[#A47E6C] text-xs sm:text-sm pt-1">
-          {price}
+          {price} ETB
         </span>
       </div>
 
       {/* Direct Social Messaging Actions - Mobile Responsive Split Grid */}
-     <div className="grid grid-cols-2 gap-2 pt-2 mt-auto border-t border-[#F1E7DE]/40">
+      <div className="grid grid-cols-2 gap-2 pt-2 mt-auto border-t border-[#F1E7DE]/40">
 
         {/* Telegram */}
         <button
           type="button"
-          onClick={() => handleInstantOrder(product, "telegram")}
-          className="w-full bg-[#FFFBF7] text-[#4A3B32] border border-[#F2E3D5] hover:bg-[#4A3B32] hover:text-white hover:border-[#4A3B32] py-2 rounded-xl text-[10px] font-serif font-bold transition flex items-center justify-center gap-1 leading-none whitespace-nowrap overflow-hidden"
+          onClick={() => handleInstantOrder("telegram")}
+          className="w-full bg-[#FFFBF7] text-[#4A3B32] border border-[#F2E3D5] hover:bg-[#4A3B32] hover:text-white hover:border-[#4A3B32] py-2 rounded-xl text-[10px] font-serif font-bold transition flex items-center justify-center gap-1 leading-none whitespace-nowrap overflow-hidden cursor-pointer"
         >
           <i className="fa-brands fa-telegram text-[10px] flex-shrink-0"></i>
           <span className="truncate">Telegram</span>
@@ -64,8 +65,8 @@ export default function ProductCard({ image, category, name, price }) {
         {/* WhatsApp */}
         <button
           type="button"
-          onClick={() => handleInstantOrder(product, "whatsapp")}
-          className="w-full bg-[#E07A5F] text-white hover:bg-[#d0694e] py-2 rounded-xl text-[10px] font-serif font-bold transition flex items-center justify-center gap-1 leading-none whitespace-nowrap overflow-hidden"
+          onClick={() => handleInstantOrder("whatsapp")}
+          className="w-full bg-[#E07A5F] text-white hover:bg-[#d0694e] py-2 rounded-xl text-[10px] font-serif font-bold transition flex items-center justify-center gap-1 leading-none whitespace-nowrap overflow-hidden cursor-pointer"
         >
           <i className="fa-brands fa-whatsapp text-[10px] flex-shrink-0"></i>
           <span className="truncate">WhatsApp</span>

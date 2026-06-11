@@ -5,7 +5,7 @@ export default function ContactSocials() {
     {
       id: 1,
       name: "Telegram",
-      username: "@YVBeauty",
+      username: "@yourusername",
       subtext: "Best for instant support & orders",
       icon: "fa-brands fa-telegram",
       colorClass: "text-[#26A5E4]",
@@ -15,17 +15,17 @@ export default function ContactSocials() {
     {
       id: 2,
       name: "WhatsApp",
-      username: "+251 911 23 45 67",
+      username: "+251 900 00 00 00",
       subtext: "Chat directly with a beauty advisor",
       icon: "fa-brands fa-whatsapp",
       colorClass: "text-[#25D366]",
       bgClass: "bg-[#25D366]/10",
-      link: "https://wa.me/251911234567"
+      link: "https://wa.me/251900000000"
     },
     {
       id: 3,
       name: "Instagram",
-      username: "@yv.beauty.et",
+      username: "@yourusername",
       subtext: "Daily product reels & skincare tips",
       icon: "fa-brands fa-instagram",
       colorClass: "text-[#E1306C]",
@@ -35,7 +35,7 @@ export default function ContactSocials() {
     {
       id: 4,
       name: "TikTok",
-      username: "@yv.beauty",
+      username: "@yourusername",
       subtext: "Beauty tutorials & transformation clips",
       icon: "fa-brands fa-tiktok",
       colorClass: "text-[#000000]",
@@ -45,7 +45,7 @@ export default function ContactSocials() {
     {
       id: 5,
       name: "Facebook",
-      username: "YV. Beauty Premium",
+      username: "YV. yourusername",
       subtext: "Community updates & product catalogs",
       icon: "fa-brands fa-facebook-f",
       colorClass: "text-[#1877F2]",

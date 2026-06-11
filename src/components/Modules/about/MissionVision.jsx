@@ -1,5 +1,5 @@
 import React from "react";
-
+ 
 export default function MissionVision() {
   return (
     <section className="w-full bg-white py-16 px-6 lg:px-12">

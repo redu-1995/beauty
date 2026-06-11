@@ -5,7 +5,7 @@ export default function FeaturedSkincare({ products }) {
   // Fall back to the filtered list from state props, or default to the featured central matrix data
   const displayList = products || skincareProducts.filter((product) => product.isFeatured);
 
-  const BUSINESS_PHONE = "251912245679"; 
+  const BUSINESS_PHONE = "25190000000"; // Replace with your actual business phone number in international format (without + or dashes)
   const TELEGRAM_USERNAME = "YourBeautyShopHandle"; 
 
   const handleInstantOrder = (product, platform) => {

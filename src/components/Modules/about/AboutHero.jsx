@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import aboutHeroImg from "../../../assets/heroImg.png"; // Adjust the path to your asset
+import AboutHeroImg from "../../../assets/images/About/AboutHeroImg.png"; // Adjust the path to your asset
 
 export default function AboutHero() {
   return (
@@ -53,7 +53,7 @@ export default function AboutHero() {
             {/* Primary Visual Showcase Container */}
             <div className="relative z-10 w-full max-w-md md:max-w-lg aspect-[4/5] bg-[#FBE7D6]/30 rounded-3xl overflow-hidden border border-[#F1E7DE] p-4 group">
               <img
-                src={aboutHeroImg}
+                src={AboutHeroImg}
                 alt="Premium skincare products showcase arrangement"
                 className="w-full h-full object-cover rounded-2xl grayscale-[15%] group-hover:grayscale-0 group-hover:scale-[1.03] transition-all duration-700 ease-out"
                 draggable="false"

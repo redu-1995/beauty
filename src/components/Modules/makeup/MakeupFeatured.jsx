@@ -8,7 +8,7 @@ export default function MakeupFeatured() {
   const [activeCategory, setActiveCategory] = useState("all");
 
   // Business channel handles
-  const BUSINESS_PHONE = "251912345678"; 
+  const BUSINESS_PHONE = "25190000000"; 
   const TELEGRAM_USERNAME = "YourBeautyShopHandle"; 
 
   // 2. Filter the Products Dynamically Based on Selection State

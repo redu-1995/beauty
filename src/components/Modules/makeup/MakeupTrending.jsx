@@ -17,7 +17,7 @@ const viralProductsData = [
     name: "Velvet Matte Weightless Foundation",
     category: "Face",
     price: "1,250",
-    image: "https://images.unsplash.com/photo-1631730359575-38e4755d772b?q=80&w=600",
+    image: "https://www.makeupforever.com/dw/image/v2/BCRL_PRD/on/demandware.static/-/Sites-Makeupforever_master_catalog/default/dw721eff7d/images/I000073535/3548752136778_I000073535_Matte-Velvet-Skin-Foundation-30ml--Y535_Face_4.jpg?sw=800&sh=800",
     tag: "📈 Trending Now",
     views: "94k orders saved"
   },

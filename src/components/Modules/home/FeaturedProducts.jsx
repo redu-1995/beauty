@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { ALL_PRODUCTS } from "../../../data/products"
+import { ALL_PRODUCTS } from "../../../data/products";
 
 export default function FeaturedProducts() {
   const featuredProducts = ALL_PRODUCTS.slice(0, 4);
@@ -66,16 +66,11 @@ export default function FeaturedProducts() {
                   {product.description}
                 </p>
 
-                <div className="mt-4 flex items-center justify-between">
-
+                {/* Price Section */}
+                <div className="mt-4 flex items-center">
                   <span className="text-xl font-bold text-[#E07A5F]">
                     ETB {product.price}
                   </span>
-
-                  <button className="bg-[#E07A5F] text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#d0694e] transition">
-                    View
-                  </button>
-
                 </div>
 
               </div>

@@ -6,7 +6,7 @@ export const globalProducts = [
     type: "makeup",
     category: "face",
     price: "1,250",
-    image: "https://images.unsplash.com/photo-1631730359575-38e4755d772b?q=80&w=600",
+    image: "https://www.makeupforever.com/dw/image/v2/BCRL_PRD/on/demandware.static/-/Sites-Makeupforever_master_catalog/default/dw721eff7d/images/I000073535/3548752136778_I000073535_Matte-Velvet-Skin-Foundation-30ml--Y535_Face_4.jpg?sw=800&sh=800",
     isFeatured: true,
     tag: "Bestseller"
   },
@@ -26,7 +26,7 @@ export const globalProducts = [
     type: "makeup",
     category: "face",
     price: "690",
-    image: "https://images.unsplash.com/photo-1631214503951-37512d35f43c?q=80&w=600",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXiyTBxWk5J27qbZbnlr6b5J0-O6MpeT4IiA&s",
     isFeatured: false,
     tag: "New Shade"
   },
@@ -99,7 +99,7 @@ export const globalProducts = [
     type: "makeup",
     category: "brushes",
     price: "280",
-    image: "https://images.unsplash.com/photo-1631214524020-5e18d976ddf7?q=80&w=600",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc7WVPrH3Z-luFholZlIaRbxAvq4Ygnhjd1g&s",
     isFeatured: false
   },
 

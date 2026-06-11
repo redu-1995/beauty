@@ -5,7 +5,6 @@ import MainLayout from "../components/layout/MainLayout";
 import SkincarePage from "../pages/Skincare.jsx";
 import Haircare from "../pages/Haircare"
 import Makeup from "../pages/Makeup"
-import ProductDetails from "../pages/ProductDetails"
 import CartPage from "../pages/CartPage"
 import CheckoutPage from "../pages/CheckoutPage"
 import NotFound from "../pages/NotFound"
@@ -28,7 +27,7 @@ function AppRoutes(){
              <Route path="/makeup" element={<Makeup />} />
              <Route path="/haircare" element={<Haircare />} />
              <Route path="/products" element={<Products />} />
-             <Route path="/product/:id" element = {<ProductDetails />} />
+    
              <Route path="/cart" element = {<CartPage />} />
              <Route path="/checkout" element = {<CheckoutPage />} />
              <Route path="*" element = {<NotFound />} />

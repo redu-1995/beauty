@@ -20,11 +20,7 @@ export default function Navbar() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
-          <img
-            src={logoImg}
-            alt="YV. Beauty Logo"
-            className="w-12 h-12 rounded-full object-cover"
-          />
+        
           <div className="flex flex-col leading-tight">
             <span className="font-serif font-bold text-xl text-[#4A3B32]">
               YV. Beauty
@@ -54,26 +50,7 @@ export default function Navbar() {
             Shop Now
           </Link>
 
-          {/* Search */}
-          <button
-            className="text-[#4A3B32] hover:text-[#E07A5F] transition cursor-pointer"
-            aria-label="Search"
-          >
-            <i className="fa-solid fa-magnifying-glass text-base"></i>
-          </button>
-
-          {/* Cart */}
-          <Link
-            to="/cart"
-            className="relative text-[#4A3B32] hover:text-[#E07A5F] transition"
-            aria-label="Shopping Cart"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <i className="fa-solid fa-bag-shopping text-base"></i>
-            <span className="absolute -top-2 -right-2 bg-[#E07A5F] text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
-              2
-            </span>
-          </Link>
+        
 
           {/* 🟢 Mobile Menu Toggle Button (Swaps icons based on open state) */}
           <button

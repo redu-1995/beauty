@@ -95,7 +95,7 @@ export const globalPerfumeProducts = [
     type: "perfume",
     category: "fresh",
     price: "2,700",
-    image: "https://images.unsplash.com/photo-1588405748373-122b2321bc31?q=80&w=600",
+    image: "https://www.olfactoryx.com/cdn/shop/files/MS_2_6e7de0e6-650e-4349-ab8b-0ad734e7771c.jpg?v=1772982944&width=1280",
     isFeatured: false,
     concentration: "Eau de Cologne (EDC)",
     description: "Crisp, cold mountain air captured using clean white sage leaves, wild eucalyptus sprigs, and refreshing morning dew accents."

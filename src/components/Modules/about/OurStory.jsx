@@ -1,14 +1,34 @@
+// src/components/about/OurStory.jsx
 import React from "react";
-import storyGroupImg from "../../../assets/heroImg.png"; // Your glowing lifestyle group image
-import serumThumb from "../../../assets/heroImg.png";     // Reuse your existing serum/product image
+import AboutStoryImg from "../../../assets/images/About/AboutStoryImg.png";
 
 export default function OurStory() {
-  // Mini category items representing what you select
+  // Refined category items matching your specialized Ethiopian hair & beauty curation
   const curatedCategories = [
-    { id: 1, name: "Skincare", label: "Vitamin C Serum", img: serumThumb },
-    { id: 2, name: "Makeup", label: "Matte Lipstick", img: serumThumb },
-    { id: 3, name: "Perfume", label: "Aura Perfume", img: serumThumb },
-    { id: 4, name: "Self-Care", label: "Hydrating Mask", img: serumThumb },
+    { 
+      id: 1, 
+      name: "Hair Care", 
+      label: "Growth Oils & Butter", 
+      fallbackText: "🌿" 
+    },
+    { 
+      id: 2, 
+      name: "Skincare", 
+      label: "Hydrating Serums", 
+      fallbackText: "✨" 
+    },
+    { 
+      id: 3, 
+      name: "Makeup", 
+      label: "Everyday Essentials", 
+      fallbackText: "💄" 
+    },
+    { 
+      id: 4, 
+      name: "Perfume", 
+      label: "Luxury Oud & Scents", 
+      fallbackText: "🌸" 
+    },
   ];
 
   return (
@@ -25,8 +45,8 @@ export default function OurStory() {
             
             <div className="w-full max-w-md aspect-[4/3] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-sm z-10 bg-[#FBE7D6]/20">
               <img 
-                src={storyGroupImg} 
-                alt="Diverse group enjoying natural self-care and beauty products" 
+                src={AboutStoryImg} 
+                alt="Diverse group enjoying natural Ethiopian hair and beauty routines" 
                 className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500 ease-out"
                 draggable="false"
               />
@@ -44,14 +64,14 @@ export default function OurStory() {
               </h2>
             </div>
 
-            {/* Your Provided Text Content with Premium Styling */}
+            {/* Premium Styling Text Content */}
             <div className="space-y-6">
               <p className="text-[#E07A5F] text-lg sm:text-xl font-medium font-serif leading-relaxed">
-                YV. Beauty was founded with a simple vision: to make premium beauty products accessible, authentic, and enjoyable for everyone.
+                YV. Beauty was founded with a clear, passionate vision: to celebrate diverse textures and make premium, authentic beauty and hair care essentials accessible to everyone.
               </p>
               
               <p className="text-[#705A4F] text-sm sm:text-base leading-relaxed font-medium">
-                We carefully select skincare, makeup, perfumes, and self-care essentials from trusted brands that meet our quality standards. Every item in our catalog is chosen to ensure your daily beauty ritual feels genuinely rewarding.
+                We specialize deeply in nurturing beautiful, rich Ethiopian hair textures—ranging from gorgeous kinky-coily crowns to traditional braided patterns. By sourcing trusted, authentic formulas that treat curls, skin, and senses with absolute gentleness, we ensure your self-care rituals feel profoundly rewarding.
               </p>
             </div>
           </div>
@@ -68,21 +88,29 @@ export default function OurStory() {
             {curatedCategories.map((item) => (
               <div 
                 key={item.id} 
-                className="bg-white border border-[#F2E3D5] rounded-xl p-3 flex flex-col items-center text-center space-y-3 hover:border-[#E07A5F] transition duration-300 group"
+                className="bg-white border border-[#F2E3D5] rounded-xl p-4 flex flex-col items-center text-center space-y-3 hover:border-[#E07A5F] hover:shadow-xs transition duration-300 group cursor-pointer"
               >
-                {/* Image Thumbnail Pod */}
-                <div className="w-full aspect-square bg-[#FFF5EB] rounded-lg p-2 flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={item.img} 
-                    alt={item.label} 
-                    className="max-h-full max-w-full object-contain mix-blend-multiply opacity-90 group-hover:scale-105 transition duration-300" 
-                  />
+                {/* Visual Thumbnail Pod */}
+                <div className="w-full aspect-square bg-[#FFF5EB] rounded-lg flex items-center justify-center overflow-hidden">
+                  {item.img ? (
+                    <img 
+                      src={item.img} 
+                      alt={item.label} 
+                      className="max-h-full max-w-full object-contain mix-blend-multiply opacity-90 group-hover:scale-105 transition duration-300" 
+                    />
+                  ) : (
+                    <span className="text-2xl group-hover:scale-110 transition duration-300 select-none">
+                      {item.fallbackText}
+                    </span>
+                  )}
                 </div>
                 
-                {/* Meta details */}
+                {/* Meta Details */}
                 <div className="flex flex-col leading-tight">
-                  <span className="text-xs font-bold text-[#4A3B32]">{item.label}</span>
-                  <span className="text-[10px] text-[#A47E6C] uppercase font-semibold mt-0.5 tracking-wider">
+                  <span className="text-xs font-bold text-[#4A3B32] line-clamp-1">
+                    {item.label}
+                  </span>
+                  <span className="text-[10px] text-[#A47E6C] uppercase font-semibold mt-1 tracking-wider">
                     {item.name}
                   </span>
                 </div>
