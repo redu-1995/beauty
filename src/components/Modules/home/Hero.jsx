@@ -5,7 +5,7 @@ import heroImage from "../../../assets/images/hero/hero.png";
 
 export default function Hero() {
   return (
-    <section className="overflow-hidden bg-white w-full pt-28">
+    <section className="overflow-hidden bg-white w-full pt-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 md:py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
