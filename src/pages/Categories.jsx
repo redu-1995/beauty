@@ -16,26 +16,45 @@ export default function Categories() {
     <div className="w-full bg-white flex flex-col">
 
       {/* Hero Section */}
-      <div className="w-full bg-[#EAE0D5]/60 grid grid-cols-1 md:grid-cols-2 items-center border-b border-[#DFD3C3]">
-        <div className="p-8 md:p-12 lg:p-16 space-y-3 text-left">
-          <h1 className="text-2xl md:text-3xl font-serif font-bold text-[#4A3B32]">
-            Shop By Category
-          </h1>
+      <div className="w-full bg-white flex flex-col">
 
-          <p className="text-sm text-[#705A4F] leading-relaxed max-w-md font-medium">
-            Explore beauty products carefully organized for your skincare,
-            makeup, haircare, and fragrance needs.
-          </p>
-        </div>
+  {/* Hero Section - Upgraded with spacing for the floating navbar */}
+  <div className="w-full bg-[#EAE0D5]/40 grid grid-cols-1 md:grid-cols-2 items-center border-b border-[#DFD3C3] relative overflow-hidden pt-20 md:pt-24">
+    
+    {/* Ambient luxury glow under the fixed navbar spacing */}
+    <div className="absolute top-0 left-0 w-64 h-32 bg-[#E07A5F]/5 blur-[60px] pointer-events-none" />
 
-        <div className="h-48 md:h-64 w-full">
-          <img
-            src={categoryHeaderImg}
-            alt="Beauty category showcase"
-            className="w-full h-full object-cover"
-          />
-        </div>
-      </div>
+    {/* Text Description Block */}
+    <div className="p-8 md:p-14 lg:p-20 space-y-4 text-left relative z-10">
+      <span className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-[#A47E6C] block">
+        Our Departments
+      </span>
+      
+      <h1 className="text-3xl md:text-4xl font-serif font-bold text-[#4A3B32] uppercase tracking-wide leading-tight">
+        Shop By Category
+      </h1>
+
+      <div className="w-10 h-[2px] bg-[#E07A5F] rounded-full" />
+
+      <p className="text-xs sm:text-sm text-[#705A4F] leading-relaxed max-w-sm font-medium">
+        Explore beauty products carefully organized for your skincare,
+        makeup, haircare, and fragrance needs.
+      </p>
+    </div>
+
+    {/* Image Container Block */}
+    <div className="h-56 md:h-72 lg:h-80 w-full relative">
+      <img
+        src={categoryHeaderImg}
+        alt="Beauty category showcase"
+        className="w-full h-full object-cover"
+      />
+      {/* Soft gradient overlay to blend the image edge cleanly into the section background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#EAE0D5]/20 to-transparent pointer-events-none hidden md:block" />
+    </div>
+
+  </div>
+</div>
 
       {/* Main Content */}
       <div className="max-w-6xl mx-auto w-full px-4 md:px-6 py-12 space-y-12">

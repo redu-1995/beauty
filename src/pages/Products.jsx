@@ -41,15 +41,28 @@ export default function Products() {
     <div className="w-full flex flex-col bg-white">
 
       {/* Header Banner */}
-      <div className="w-full bg-[#F5E6D3] text-center py-10 px-4 border-b border-[#EADBC8]">
-        <h1 className="text-2xl md:text-3xl font-serif font-bold text-[#4A3B32] uppercase tracking-widest">
-          Beauty Collection
-        </h1>
+     <div className="w-full bg-[#FFFBF7] text-center pt-28 pb-12 md:pt-36 md:pb-16 px-4 border-b border-[#F1E7DE] relative overflow-hidden">
+  
+  {/* Elegant Subtle Background Glow to give a luxury spa/boutique feel */}
+  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[150px] bg-[#E07A5F]/5 blur-[80px] rounded-full pointer-events-none" />
 
-        <p className="text-xs sm:text-sm text-[#705A4F] mt-2 font-medium tracking-wide">
-          Explore Skincare, Makeup, Perfumes and Self-Care Essentials
-        </p>
-      </div>
+  <div className="relative max-w-3xl mx-auto space-y-3">
+    {/* Small elegant premium category flag */}
+    <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#A47E6C] block animate-fade-in">
+      Curated Elegance
+    </span>
+    
+    <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#4A3B32] uppercase tracking-[0.15em] leading-tight">
+      Beauty Collection
+    </h1>
+
+    <div className="w-12 h-[2px] bg-[#E07A5F] mx-auto my-4 rounded-full" />
+
+    <p className="text-xs sm:text-sm md:text-base text-[#705A4F] font-medium tracking-wide max-w-xl mx-auto leading-relaxed">
+      Explore Skincare, Makeup, Perfumes and Self-Care Essentials curated to highlight your natural radiance.
+    </p>
+  </div>
+</div>
 
       <div className="max-w-7xl mx-auto w-full px-4 md:px-6 py-6">
 
