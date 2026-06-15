@@ -4,7 +4,7 @@ YV. Beauty is a highly optimized, premium Single Page Application (SPA) built fo
 
 Rather than utilizing a traditional complex checkout cart, the platform implements a high-converting **Direct Social Checkout Strategy**, routing buying customers instantly to personal conversational channels via Telegram and WhatsApp for local delivery logistics.
 
-**🚀 Live Demo:** [yvbeauty.netlify.app]([yvbeauty.netlify.app/](https://yvbeauty.netlify.app/))
+**🚀 Live Demo:** [yvbeauty.netlify.app](https://yvbeauty.netlify.app)
 
 ---
 
