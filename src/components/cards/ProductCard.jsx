@@ -1,8 +1,10 @@
 // src/components/cards/ProductCard.jsx
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { createWhatsAppUrl } from "../../utils/whatsapp";
 
 export default function ProductCard({ image, category, name, price }) {
+  const [imageFailed, setImageFailed] = useState(false);
   const orderUrl = createWhatsAppUrl(
     `Hello! I would like to order ${name} for ${price} ETB. Please share payment and delivery details.`,
   );
@@ -12,12 +14,22 @@ export default function ProductCard({ image, category, name, price }) {
       
       {/* Product Image Frame Container */}
       <div className="w-full aspect-[4/5] bg-[#FFFBF7] rounded-xl overflow-hidden mb-4 relative border border-[#F1E7DE]/30">
-        <img 
-          src={image} 
-          alt={name} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-          draggable="false"
-        />
+        {imageFailed ? (
+          <div role="img" aria-label={`${name} image unavailable`} className="flex h-full w-full flex-col items-center justify-center gap-2 px-3 text-center text-sm text-[#705A4F]">
+            <i className="fa-regular fa-image text-2xl" aria-hidden="true"></i>
+            <span>Image unavailable</span>
+          </div>
+        ) : (
+          <img
+            src={image}
+            alt={name}
+            loading="lazy"
+            decoding="async"
+            onError={() => setImageFailed(true)}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            draggable="false"
+          />
+        )}
       </div>
 
       {/* Product Information Context Labels */}
@@ -39,6 +51,7 @@ export default function ProductCard({ image, category, name, price }) {
             href={orderUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Order ${name} for ${price} ETB on WhatsApp in a new tab`}
             className="flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#AD4B37] px-2 py-2 text-center text-xs font-semibold text-white transition hover:bg-[#913D2E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
           >
             <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>Order on WhatsApp

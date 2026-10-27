@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import ProductCard from "../components/cards/ProductCard";
-import ProductCarousel from "../components/Modules/ProductCarousel";
 import { PRODUCTS_BY_TYPE, ALL_PRODUCTS } from "../data/products";
 
 export default function Products() {
-  const [sortOpen, setSortOpen] = useState(false);
   const [selectedSort, setSelectedSort] = useState("Featured");
   const [activeCategory, setActiveCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -40,34 +38,21 @@ export default function Products() {
   return (
     <div className="w-full flex flex-col bg-white">
 
-      {/* Header Banner */}
-     <div className="w-full bg-[#FFFBF7] text-center pt-28 pb-12 md:pt-36 md:pb-16 px-4 border-b border-[#F1E7DE] relative overflow-hidden">
-  
-  {/* Elegant Subtle Background Glow to give a luxury spa/boutique feel */}
-  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[150px] bg-[#E07A5F]/5 blur-[80px] rounded-full pointer-events-none" />
+      <header className="w-full border-b border-[#F1E7DE] bg-[#FFFBF7] px-4 pb-5 pt-24 text-center md:pb-7 md:pt-28">
+        <div className="mx-auto max-w-3xl">
+          <h1 className="font-serif text-2xl font-bold leading-tight text-[#4A3B32] sm:text-3xl">
+            Beauty Collection
+          </h1>
+          <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-[#5F4A40]">
+            Shop skincare, makeup, haircare, and fragrance.
+          </p>
+        </div>
+      </header>
 
-  <div className="relative max-w-3xl mx-auto space-y-3">
-    {/* Small elegant premium category flag */}
-    <span className="text-[10px] md:text-xs font-bold tracking-[0.3em] uppercase text-[#A47E6C] block animate-fade-in">
-      Curated Elegance
-    </span>
-    
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#4A3B32] uppercase tracking-[0.15em] leading-tight">
-      Beauty Collection
-    </h1>
-
-    <div className="w-12 h-[2px] bg-[#E07A5F] mx-auto my-4 rounded-full" />
-
-    <p className="text-xs sm:text-sm md:text-base text-[#705A4F] font-medium tracking-wide max-w-xl mx-auto leading-relaxed">
-      Explore Skincare, Makeup, Perfumes and Self-Care Essentials curated to highlight your natural radiance.
-    </p>
-  </div>
-</div>
-
-      <div className="max-w-7xl mx-auto w-full px-4 md:px-6 py-6">
+      <div className="mx-auto w-full max-w-7xl px-4 py-4 md:px-6 md:py-6">
 
         {/* Breadcrumb + Controls */}
-        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 mb-6">
+        <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
 
           <div>
             <div className="text-xs font-semibold flex items-center gap-2">
@@ -90,145 +75,70 @@ export default function Products() {
 
             </div>
 
-            <p className="text-xs text-[#A47E6C] mt-1">
+            <p className="mt-1 text-xs text-[#5F4A40]" aria-live="polite">
               Showing {displayedProducts.length} products
             </p>
           </div>
 
           {/* Search + Sort */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center sm:gap-3">
 
             {/* Search */}
+            <label className="sr-only" htmlFor="products-search">Search products</label>
             <input
-              type="text"
+              id="products-search"
+              type="search"
               placeholder="Search products..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="bg-[#FFF5EB] border border-[#EADBC8] rounded-full px-4 py-2 text-xs text-[#4A3B32] w-56 focus:outline-none"
+              className="min-h-11 w-full rounded-lg border border-[#D8C6B7] bg-[#FFF5EB] px-4 text-sm text-[#4A3B32] placeholder:text-[#705A4F] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9F422F] sm:w-56"
             />
 
-            {/* Sort Dropdown */}
-            <div className="relative">
-
-              <button
-                onClick={() => setSortOpen(!sortOpen)}
-                className="bg-[#FFF5EB] border border-[#EADBC8] rounded-lg px-4 py-2 text-xs text-[#4A3B32] flex items-center gap-1 font-medium cursor-pointer"
-              >
-                Sort By:
-                <span className="text-[#E07A5F]">
-                  {selectedSort}
-                </span>
-                ▾
-              </button>
-
-              {sortOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white border border-[#EADBC8] rounded-lg shadow-lg z-20">
-
-                  {[
-                    "Featured",
-                    "Newest",
-                    "Price: L-H",
-                    "Price: H-L",
-                  ].map((option) => (
-                    <button
-                      key={option}
-                      onClick={() => {
-                        setSelectedSort(option);
-                        setSortOpen(false);
-                      }}
-                      className="block w-full text-left px-4 py-2 text-xs hover:bg-[#FFF5EB]"
-                    >
-                      {option}
-                    </button>
-                  ))}
-
-                </div>
-              )}
-
-            </div>
+            <label className="sr-only" htmlFor="products-sort">Sort products</label>
+            <select
+              id="products-sort"
+              value={selectedSort}
+              onChange={(event) => setSelectedSort(event.target.value)}
+              className="min-h-11 w-full rounded-lg border border-[#D8C6B7] bg-[#FFF5EB] px-4 text-sm font-medium text-[#4A3B32] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9F422F] sm:w-auto"
+            >
+              <option>Featured</option>
+              <option>Newest</option>
+              <option>Price: L-H</option>
+              <option>Price: H-L</option>
+            </select>
 
           </div>
         </div>
 
         {/* Main Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div>
+          <div role="group" aria-label="Filter products by category" className="mb-4 flex flex-wrap gap-2">
+            {[
+              { label: "All Products", value: null },
+              { label: "Skincare", value: "skincare" },
+              { label: "Makeup", value: "makeup" },
+              { label: "Haircare", value: "haircare" },
+              { label: "Perfumes", value: "perfumes" },
+            ].map(({ label, value }) => (
+              <button
+                key={label}
+                type="button"
+                aria-pressed={activeCategory === value}
+                onClick={() => setActiveCategory(value)}
+                className={`min-h-11 rounded-full border px-4 text-sm font-medium transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9F422F] ${
+                  activeCategory === value
+                    ? "border-[#9F422F] bg-[#9F422F] text-white"
+                    : "border-[#D8C6B7] bg-white text-[#4A3B32] hover:bg-[#FFF5EB]"
+                }`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
 
-          {/* Sidebar */}
-          <aside className="lg:col-span-3">
+          <section aria-label="Product results">
 
-            <div className="bg-[#FFF5EB] border border-[#EADBC8] rounded-2xl p-5">
-
-              <h3 className="text-xs font-bold uppercase tracking-wider text-[#4A3B32] border-b border-[#EADBC8] pb-3 mb-4">
-                Categories
-              </h3>
-
-              <ul className="space-y-3 text-sm">
-
-                <li
-                  onClick={() => setActiveCategory(null)}
-                  className={`cursor-pointer font-medium transition ${
-                    !activeCategory
-                      ? "text-[#E07A5F]"
-                      : "text-[#705A4F] hover:text-[#E07A5F]"
-                  }`}
-                >
-                  All Products
-                </li>
-
-                <li
-                  onClick={() => setActiveCategory("skincare")}
-                  className={`cursor-pointer font-medium transition ${
-                    activeCategory === "skincare"
-                      ? "text-[#E07A5F]"
-                      : "text-[#705A4F] hover:text-[#E07A5F]"
-                  }`}
-                >
-                  Skincare
-                </li>
-
-                <li
-                  onClick={() => setActiveCategory("makeup")}
-                  className={`cursor-pointer font-medium transition ${
-                    activeCategory === "makeup"
-                      ? "text-[#E07A5F]"
-                      : "text-[#705A4F] hover:text-[#E07A5F]"
-                  }`}
-                >
-                  Makeup
-                </li>
-
-                <li
-                  onClick={() => setActiveCategory("haircare")}
-                  className={`cursor-pointer font-medium transition ${
-                    activeCategory === "haircare"
-                      ? "text-[#E07A5F]"
-                      : "text-[#705A4F] hover:text-[#E07A5F]"
-                  }`}
-                >
-                  Hair Care
-                </li>
-
-                <li
-                  onClick={() => setActiveCategory("perfumes")}
-                  className={`cursor-pointer font-medium transition ${
-                    activeCategory === "perfumes"
-                      ? "text-[#E07A5F]"
-                      : "text-[#705A4F] hover:text-[#E07A5F]"
-                  }`}
-                >
-                  Perfumes
-                </li>
-
-              </ul>
-
-            </div>
-
-          </aside>
-
-          {/* Products */}
-          <main className="lg:col-span-9">
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="grid grid-cols-1 gap-4 min-[375px]:grid-cols-2 sm:gap-5 lg:grid-cols-3">
 
               {displayedProducts.map((product) => (
                 <ProductCard
@@ -244,21 +154,28 @@ export default function Products() {
 
             {/* Empty State */}
             {displayedProducts.length === 0 && (
-              <div className="text-center py-16">
-                <p className="text-[#A47E6C] font-medium">
-                  No products found.
-                </p>
+              <div className="rounded-lg border border-[#EADBC8] bg-[#FFFBF7] px-5 py-10 text-center sm:col-span-2 lg:col-span-3">
+                <h2 className="font-serif text-xl font-bold text-[#4A3B32]">No products found</h2>
+                <p className="mt-2 text-sm text-[#5F4A40]">Try another search or clear your filters.</p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSearchTerm("");
+                    setActiveCategory(null);
+                    setSelectedSort("Featured");
+                  }}
+                  className="mt-4 inline-flex min-h-11 items-center justify-center rounded-lg border border-[#9F422F] px-5 text-sm font-semibold text-[#9F422F] hover:bg-[#FFF3EE] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9F422F]"
+                >
+                  Clear search and filters
+                </button>
               </div>
             )}
 
-          </main>
+          </section>
 
         </div>
 
       </div>
-
-      {/* Featured Product Carousel */}
-      <ProductCarousel />
 
     </div>
   );
