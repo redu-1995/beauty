@@ -1,11 +1,9 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import { createWhatsAppUrl } from "../../../utils/whatsapp";
 
 export default function ConsultationCTA() {
-  // Centralized configuration for quick-chat handles
-  const SOCIAL_CHANNELS = {
-    telegram: "https://t.me/your_telegram_username", // Replace with your actual Telegram link or channel username
-    whatsapp: "https://wa.me/251911******"          // Replace with your actual WhatsApp contact link
-  };
+  const telegramUrl = "https://t.me/YVbeauty1";
+  const whatsappUrl = createWhatsAppUrl("Hello! I would like help choosing haircare products.");
 
   return (
     <section className="w-full bg-white py-16 px-6 lg:px-12">
@@ -43,7 +41,7 @@ export default function ConsultationCTA() {
               
               {/* Main Telegram Consultant Trigger Button */}
               <a
-                href={SOCIAL_CHANNELS.telegram}
+                href={telegramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto bg-[#E07A5F] text-white hover:bg-[#d0694e] px-8 py-4 rounded-xl text-xs sm:text-sm font-serif font-bold tracking-wider uppercase transition-all duration-300 shadow-xs flex items-center justify-center gap-2.5 group/btn"
@@ -54,15 +52,24 @@ export default function ConsultationCTA() {
               </a>
 
               {/* Secondary Backup WhatsApp Contact Trigger Button */}
-              <a
-                href={SOCIAL_CHANNELS.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-white/5 text-[#FFFBF7] hover:bg-white/10 border border-white/20 px-8 py-4 rounded-xl text-xs sm:text-sm font-serif font-bold tracking-wider uppercase transition-colors duration-300 flex items-center justify-center gap-2.5"
-              >
-                <i className="fa-brands fa-whatsapp text-base text-[#25D366]"></i>
-                <span>Message via WhatsApp</span>
-              </a>
+              {whatsappUrl ? (
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto bg-white/5 text-[#FFFBF7] hover:bg-white/10 border border-white/20 px-8 py-4 rounded-xl text-xs sm:text-sm font-serif font-bold tracking-wider uppercase transition-colors duration-300 flex items-center justify-center gap-2.5"
+                >
+                  <i className="fa-brands fa-whatsapp text-base text-[#25D366]"></i>
+                  <span>Message via WhatsApp</span>
+                </a>
+              ) : (
+                <Link
+                  to="/contact"
+                  className="w-full sm:w-auto bg-white/5 text-[#FFFBF7] hover:bg-white/10 border border-white/20 px-8 py-4 rounded-xl text-xs sm:text-sm font-serif font-bold tracking-wider uppercase transition-colors duration-300 flex items-center justify-center gap-2.5"
+                >
+                  <span>Ask about haircare</span>
+                </Link>
+              )}
 
             </div>
 

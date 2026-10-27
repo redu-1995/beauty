@@ -1,88 +1,46 @@
-import React from "react";
 // 1. Import Link from your router kit to drive navigation actions
 import { Link } from "react-router-dom";
 import heroImage from "../../../assets/images/hero/hero.png";
 
 export default function Hero() {
   return (
-    <section className="overflow-hidden bg-white w-full pt-10 md:pt-14">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-12 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-          {/* Left Side Content Column Layout */}
-          <div className="text-left flex flex-col items-start">
-            
-            {/* Animated Brand Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#FBE7D6] text-[#A47E6C] text-xs font-semibold mb-6 select-none animate-fade-in">
-              ✨ Premium Beauty Collection
-            </div>
-
-            {/* Premium Header Alignment Matrix */}
-            <h1 className="font-serif text-[#4A3B32] font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.15] tracking-tight">
-              Beauty That <br />
-              Enhances Your <br />
-              <span className="text-[#E07A5F]">Natural Glow</span>
+    <section className="w-full overflow-hidden bg-[#FFFBF7] pt-16 md:pt-14">
+      <div className="mx-auto max-w-7xl px-5 py-6 sm:px-6 md:px-12 md:py-12">
+        <div className="grid grid-cols-1 items-center gap-5 md:grid-cols-2 md:gap-12">
+          <div className="order-2 flex flex-col items-start text-left md:order-1">
+            <span className="mb-3 inline-flex items-center rounded-full bg-[#FBE7D6] px-3 py-1.5 text-xs font-semibold text-[#705A4F]">
+              Premium beauty essentials
+            </span>
+            <h1 className="max-w-xl font-serif text-3xl font-bold leading-tight text-[#4A3B32] sm:text-4xl lg:text-5xl">
+              Beauty That Enhances Your <span className="text-[#C85D45]">Natural Glow</span>
             </h1>
-
-            {/* Left-Aligned Paragraph Context Body */}
-            <p className="mt-6 text-[#705A4F] text-sm md:text-base leading-relaxed max-w-lg font-medium">
-              Discover premium skincare, makeup, perfumes, and self-care
-              essentials carefully selected to elevate your everyday routine.
+            <p className="mt-3 max-w-lg text-sm font-medium leading-relaxed text-[#5F4A40] sm:text-base">
+              Shop skincare, makeup, haircare, and fragrance, delivered across Addis Ababa.
             </p>
-
-            {/* Core Functional Routing CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
-              
-              <Link 
-                to="/products" 
-                className="bg-[#E07A5F] text-white px-8 py-3.5 rounded-xl font-serif font-bold text-center text-sm shadow-xs hover:bg-[#d0694e] hover:shadow-md transition duration-300 cursor-pointer"
+            <div className="mt-5 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+              <Link
+                to="/products"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#AD4B37] px-7 py-3 text-sm font-bold text-white transition hover:bg-[#913D2E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
               >
-                Shop Collection
+                Shop Products
               </Link>
-
-              <Link 
-                to="/categories" 
-                className="border border-[#E07A5F] text-[#E07A5F] px-8 py-3.5 rounded-xl font-serif font-bold text-center text-sm hover:bg-[#FFF3EE] transition duration-300 cursor-pointer"
+              <Link
+                to="/categories"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg border border-[#C85D45] px-7 py-3 text-sm font-semibold text-[#9F422F] transition hover:bg-[#FFF3EE] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
               >
                 Browse Categories
               </Link>
-
             </div>
-
-            {/* Trust Badges - Uses FontAwesome icons cleanly */}
-            <div className="flex flex-wrap gap-x-6 gap-y-3 mt-10 border-t border-[#FBE7D6] pt-6 w-full">
-              <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#E07A5F] text-sm"></i>
-                <span className="text-xs font-semibold text-[#705A4F]">Authentic Products</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#E07A5F] text-sm"></i>
-                <span className="text-xs font-semibold text-[#705A4F]">Premium Quality</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <i className="fa-solid fa-circle-check text-[#E07A5F] text-sm"></i>
-                <span className="text-xs font-semibold text-[#705A4F]">Fast Delivery</span>
-              </div>
-            </div>
-
           </div>
 
-          {/* Right Side Graphics Column Layout */}
-          <div className="relative flex justify-center items-center w-full">
-            
-            {/* 🟢 Accent Circle: Fixed missing background color class */}
-            <div className="absolute w-[320px] sm:w-[420px] aspect-square rounded-full  opacity-60 blur-3xl z-0"></div>
-
-            {/* Primary Hero Subject Artwork Container */}
+          <div className="order-1 mx-auto w-full max-w-lg md:order-2">
             <img
               src={heroImage}
-              alt="Premium Beauty Collection Showcase"
-              className="relative z-10 w-full max-w-md md:max-w-lg object-contain hover:scale-[1.02] transition-transform duration-700 ease-out"
+              alt="A woman applying skincare to her cheek"
+              className="h-60 w-full rounded-xl object-cover object-[center_35%] sm:h-72 md:h-auto md:max-h-[520px] md:rounded-none md:object-contain md:object-center"
               draggable="false"
             />
-
           </div>
-
         </div>
       </div>
     </section>

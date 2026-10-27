@@ -1,8 +1,10 @@
-import React from "react";
 import { Link } from "react-router-dom"; // Imported Link for SPA routing
+import { createWhatsAppUrl } from "../../utils/whatsapp";
 
 
 export default function Footer() {
+  const whatsappUrl = createWhatsAppUrl("Hello! I have a question for YV. Beauty.");
+
   return (
     <footer className="w-full bg-[#EAE0D5] border-t border-[#DFD3C3] text-[#4A3B32]">
 
@@ -25,35 +27,28 @@ export default function Footer() {
 
           {/* Social Icons Media Row Actions (Kept original as requested) */}
           <div className="flex gap-3 pt-1">
-            <a
-              href="https://wa.me/2519XXXXXXXX" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#E07A5F] shadow-2xs cursor-pointer hover:bg-[#E07A5F] hover:text-white transition duration-300"
-              aria-label="Chat with YV. Beauty on WhatsApp"
-            >
-              <i className="fa-brands fa-whatsapp text-base"></i>
-            </a>
+            {whatsappUrl && (
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#9F422F] shadow-2xs transition duration-300 hover:bg-[#AD4B37] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
+                aria-label="Chat with YV. Beauty on WhatsApp"
+              >
+                <i className="fa-brands fa-whatsapp text-base"></i>
+              </a>
+            )}
 
             <a
               href="https://t.me/YVbeauty1" 
               target="_blank"
               rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#E07A5F] shadow-2xs cursor-pointer hover:bg-[#E07A5F] hover:text-white transition duration-300"
+              className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#9F422F] shadow-2xs transition duration-300 hover:bg-[#AD4B37] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
               aria-label="Join YV. Beauty on Telegram"
             >
               <i className="fa-brands fa-telegram text-base"></i>
             </a>
 
-            <a
-              href="https://facebook.com/YVBeauty" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-9 h-9 rounded-full bg-white flex items-center justify-center text-[#E07A5F] shadow-2xs cursor-pointer hover:bg-[#E07A5F] hover:text-white transition duration-300"
-              aria-label="Follow YV. Beauty on Facebook"
-            >
-              <i className="fa-brands fa-facebook-f text-sm"></i>
-            </a>
           </div>
         </div>
 
@@ -140,15 +135,12 @@ export default function Footer() {
           </h3>
 
           <p className="text-sm text-[#705A4F] leading-relaxed">
-            Found your favorite routine items? Click the ordering links on any product card to chat directly with us on <strong>Telegram</strong> or <strong>WhatsApp</strong> for seamless instant delivery across Addis Ababa.
+            Delivery across Addis Ababa typically takes 1–3 business days. Unopened, unused items in their original sealed packaging may be returned within 7 days of delivery.
           </p>
 
-          <div className="bg-white/40 border border-[#DFD3C3] rounded-xl p-3 flex items-center gap-2.5 max-w-sm">
-            <i className="fa-solid fa-truck-sparkles text-[#E07A5F] text-xs"></i>
-            <span className="text-xs font-medium text-[#4A3B32]">
-              ⚡ Fast city-wide delivery within 24-48 hours.
-            </span>
-          </div>
+          <Link to="/contact" className="inline-flex min-h-11 items-center text-sm font-semibold text-[#9F422F] underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]">
+            Questions about delivery or returns?
+          </Link>
         </div>
 
       </div>

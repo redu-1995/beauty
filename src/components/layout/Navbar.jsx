@@ -1,6 +1,6 @@
 // src/components/layout/Navbar.jsx
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import logoImg from "../../assets/images/logo/logo.png";
 
@@ -23,7 +23,7 @@ export default function Navbar() {
 
   // Dynamic class matching for luxury hover transitions and active indicator underlines
   const getLinkClass = ({ isActive }) =>
-    `relative py-1 text-sm font-medium tracking-wide transition-all duration-300 ease-out after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#E07A5F] after:transition-transform after:duration-300 after:ease-out hover:after:origin-bottom-left hover:after:scale-x-100 ${
+    `relative inline-flex min-h-11 items-center py-1 text-sm font-medium tracking-wide transition-all duration-300 ease-out after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 after:bg-[#E07A5F] after:transition-transform after:duration-300 after:ease-out hover:after:origin-bottom-left hover:after:scale-x-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9F422F] ${
       isActive
         ? "text-[#E07A5F] after:scale-x-100 font-semibold"
         : "text-[#4A3B32] hover:text-[#E07A5F]"
@@ -78,16 +78,19 @@ export default function Navbar() {
           {/* Luxury CTA Button with fluid hover fill */}
           <Link
             to="/products"
-            className="hidden lg:inline-flex items-center justify-center bg-[#4A3B32] text-[#FFFBF7] px-7 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#E07A5F] hover:text-white transition-all duration-300 shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0"
+            className="hidden min-h-11 lg:inline-flex items-center justify-center bg-[#4A3B32] text-[#FFFBF7] px-7 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#E07A5F] hover:text-white transition-all duration-300 shadow-xs hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9F422F]"
           >
-            Shop Now
+            Shop Products
           </Link>
 
           {/* Mobile Menu Action Toggle Button */}
           <button
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-[#4A3B32] hover:text-[#E07A5F] transition-colors duration-200 cursor-pointer p-1.5 rounded-full hover:bg-[#FBF8F5]"
+            className="md:hidden min-h-11 min-w-11 text-[#4A3B32] hover:text-[#E07A5F] transition-colors duration-200 cursor-pointer rounded-full hover:bg-[#FBF8F5] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9F422F]"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? (
               <i className="fa-solid fa-xmark text-xl"></i>
@@ -100,13 +103,15 @@ export default function Navbar() {
 
       {/* Mobile Dropdown Overlay (Luxury Soft Fade & Slide Reveal) */}
       <div
+        id="mobile-navigation"
+        inert={!isMenuOpen}
         className={`md:hidden absolute left-0 w-full bg-white/95 backdrop-blur-lg border-b border-[#F1E7DE] shadow-xl transition-all duration-300 ease-in-out origin-top ${
           isMenuOpen
             ? "opacity-100 scale-y-100 visible"
             : "opacity-0 scale-y-95 invisible pointer-events-none"
         }`}
       >
-        <div className="px-8 py-6 flex flex-col gap-5 text-sm font-medium">
+        <div className="px-6 py-4 flex flex-col gap-2 text-sm font-medium">
           <NavLink to="/" className={getLinkClass} onClick={() => setIsMenuOpen(false)}>Home</NavLink>
           <NavLink to="/products" className={getLinkClass} onClick={() => setIsMenuOpen(false)}>Shop</NavLink>
           <NavLink to="/categories" className={getLinkClass} onClick={() => setIsMenuOpen(false)}>Categories</NavLink>
@@ -116,9 +121,9 @@ export default function Navbar() {
           <Link
             to="/products"
             onClick={() => setIsMenuOpen(false)}
-            className="w-full text-center bg-[#E07A5F] text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#d0694e] transition-all duration-200 mt-2 block shadow-sm"
+            className="w-full min-h-12 text-center bg-[#AD4B37] text-white py-3 rounded-xl text-xs font-bold uppercase tracking-wider hover:bg-[#913D2E] transition-all duration-200 mt-2 block shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
           >
-            Shop Now
+            Shop Products
           </Link>
         </div>
       </div>

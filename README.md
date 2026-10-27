@@ -102,6 +102,8 @@ npm run build
 
 This repository is optimized for out-of-the-box continuous deployment workflows with **Netlify**.
 
+Set `VITE_WHATSAPP_NUMBER` in the local environment or Netlify site settings to enable product ordering. Use the business number in international format with digits only (country code included); without a valid number, product cards link to Contact instead of opening a placeholder chat.
+
 ### Important Development Configurations Kept in Track:
 
 * **Strict Case-Sensitivity Rules:** To guarantee successful compilations under Linux environment servers, all module files reside inside a capitalized folder structure path (`src/components/Modules/...`) and are explicitly imported using their respective `.jsx` file extensions.

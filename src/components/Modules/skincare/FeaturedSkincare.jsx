@@ -1,26 +1,19 @@
-import React from "react";
 import { skincareProducts } from "../../../data/skincareData";
+import { createWhatsAppUrl, hasWhatsAppContact } from "../../../utils/whatsapp";
 
 export default function FeaturedSkincare({ products }) {
   // Fall back to the filtered list from state props, or default to the featured central matrix data
   const displayList = products || skincareProducts.filter((product) => product.isFeatured);
 
-  const BUSINESS_PHONE = "25190000000"; // Replace with your actual business phone number in international format (without + or dashes)
-  const TELEGRAM_USERNAME = "YourBeautyShopHandle"; 
+  const handleInstantOrder = (product) => {
+    const url = createWhatsAppUrl(
+      `Hello! I would like to order ${product.name} for ${product.price}. Please share payment and delivery details.`,
+    );
 
-  const handleInstantOrder = (product, platform) => {
-    const baseMessage = 
-      `Hello! I would like to order the following skincare product from your store:\n\n` +
-      `✨ Product: ${product.name}\n` +
-      `💰 Price: ${product.price}\n\n` +
-      `Please let me know how to proceed with payment and delivery details!`;
-
-    const encodedMessage = encodeURIComponent(baseMessage);
-
-    if (platform === "whatsapp") {
-      window.open(`https://wa.me/${BUSINESS_PHONE}?text=${encodedMessage}`, "_blank");
-    } else if (platform === "telegram") {
-      window.open(`https://t.me/${TELEGRAM_USERNAME}?text=${encodedMessage}`, "_blank");
+    if (url) {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } else {
+      window.location.assign("/contact");
     }
   };
 
@@ -84,26 +77,14 @@ export default function FeaturedSkincare({ products }) {
               </div>
 
               {/* Bottom Section: Perfectly Aligned Elegant Social Grid Buttons */}
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 mt-auto border-t border-[#F1E7DE]/40">
-                
-                {/* Telegram Button */}
+             <div className="pt-2 mt-auto border-t border-[#F1E7DE]/40">
                 <button
                   type="button"
-                  onClick={() => handleInstantOrder(product, "telegram")}
-                  className="w-full bg-[#FFFBF7] text-[#4A3B32] border border-[#F2E3D5] hover:bg-[#4A3B32] hover:text-white hover:border-[#4A3B32] py-2.5 rounded-xl text-[11px] font-serif font-bold transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2 select-none leading-none"
+                  onClick={() => handleInstantOrder(product)}
+                  className="flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#C85D45] px-2 py-2 text-center text-xs font-semibold text-white transition hover:bg-[#AD4B37] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
                 >
-                  <i className="fa-brands fa-telegram text-xs flex items-center justify-center"></i>
-                  <span className="leading-none">Telegram</span>
-                </button>
-
-                {/* WhatsApp Button */}
-                <button
-                  type="button"
-                  onClick={() => handleInstantOrder(product, "whatsapp")}
-                  className="w-full bg-[#E07A5F] text-white hover:bg-[#d0694e] py-2.5 rounded-xl text-[9.5px] font-serif font-bold transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2 select-none leading-none"
-                >
-                  <i className="fa-brands fa-whatsapp text-xs flex items-center justify-center"></i>
-                  <span className="leading-none">WhatsApp</span>
+                  <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                  {hasWhatsAppContact ? "Order on WhatsApp" : "Ask about this product"}
                 </button>
 
               </div>

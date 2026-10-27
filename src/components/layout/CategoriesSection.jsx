@@ -1,6 +1,5 @@
 // src/components/sections/CategoriesSection.jsx
 
-import React from "react";
 import CategoryCollectionCard from "../cards/CategoryCollectionCard";
 
 import skincareImg from "../../assets/images/categories/skincareImg.webp";
@@ -10,14 +9,14 @@ import perfumeImg from "../../assets/images/categories/perfumeImg.webp";
 
 export default function CategoriesSection() {
   return (
-    <section className="py-16">
+    <section className="bg-[#FFFBF7] py-10 md:py-14">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-3xl font-serif font-bold text-center text-[#4A3B32] mb-10">
+        <h2 className="mb-6 text-center font-serif text-2xl font-bold text-[#4A3B32] md:text-3xl">
           Shop By Category
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
 
           <CategoryCollectionCard
             title="Skincare"

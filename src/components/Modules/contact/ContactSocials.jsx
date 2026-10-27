@@ -1,57 +1,28 @@
-import React from "react";
+import { createWhatsAppUrl } from "../../../utils/whatsapp";
 
 export default function ContactSocials() {
+  const whatsappUrl = createWhatsAppUrl("Hello! I would like to speak with a YV. Beauty advisor.");
   const socialChannels = [
     {
       id: 1,
       name: "Telegram",
-      username: "@yourusername",
+      username: "YVbeauty",
       subtext: "Best for instant support & orders",
       icon: "fa-brands fa-telegram",
       colorClass: "text-[#26A5E4]",
       bgClass: "bg-[#26A5E4]/10",
-      link: "https://t.me/yourusername" // Replace with real channel link later
+      link: "https://t.me/YVbeauty1"
     },
-    {
+    ...(whatsappUrl ? [{
       id: 2,
       name: "WhatsApp",
-      username: "+251 900 00 00 00",
+      username: "Chat with an advisor",
       subtext: "Chat directly with a beauty advisor",
       icon: "fa-brands fa-whatsapp",
       colorClass: "text-[#25D366]",
       bgClass: "bg-[#25D366]/10",
-      link: "https://wa.me/251900000000"
-    },
-    {
-      id: 3,
-      name: "Instagram",
-      username: "@yourusername",
-      subtext: "Daily product reels & skincare tips",
-      icon: "fa-brands fa-instagram",
-      colorClass: "text-[#E1306C]",
-      bgClass: "bg-[#E1306C]/10",
-      link: "https://instagram.com"
-    },
-    {
-      id: 4,
-      name: "TikTok",
-      username: "@yourusername",
-      subtext: "Beauty tutorials & transformation clips",
-      icon: "fa-brands fa-tiktok",
-      colorClass: "text-[#000000]",
-      bgClass: "bg-[#000000]/5",
-      link: "https://tiktok.com"
-    },
-    {
-      id: 5,
-      name: "Facebook",
-      username: "YV. yourusername",
-      subtext: "Community updates & product catalogs",
-      icon: "fa-brands fa-facebook-f",
-      colorClass: "text-[#1877F2]",
-      bgClass: "bg-[#1877F2]/10",
-      link: "https://facebook.com"
-    }
+      link: whatsappUrl
+    }] : [])
   ];
 
   return (
@@ -64,10 +35,10 @@ export default function ContactSocials() {
             Join Our Community
           </span>
           <h2 className="font-serif text-[#4A3B32] font-bold text-2xl sm:text-3xl tracking-tight">
-            Follow Us & Chat Live
+            Chat With Our Beauty Team
           </h2>
           <p className="text-[#705A4F] text-xs sm:text-sm font-medium max-w-xl mx-auto">
-            Skip the email delay! Connect with us instantly on your favorite platforms to place fast orders, view dynamic catalogs, or ask questions.
+            Message us on Telegram, or use WhatsApp when ordering is configured for your region.
           </p>
         </div>
 

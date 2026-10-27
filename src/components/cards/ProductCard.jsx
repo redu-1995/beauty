@@ -1,27 +1,11 @@
 // src/components/cards/ProductCard.jsx
-import React from "react";
+import { Link } from "react-router-dom";
+import { createWhatsAppUrl } from "../../utils/whatsapp";
 
 export default function ProductCard({ image, category, name, price }) {
-  // Target business channel contact handles
-  const BUSINESS_PHONE = "25190000000"; // Your actual business phone string 
-  const TELEGRAM_USERNAME = "YourBeautyShopHandle"; // Your premium cosmetic shop handle
-
-  // Direct contact API redirection message handler
-  const handleInstantOrder = (platform) => {
-    const baseMessage = 
-      `Hello! I would like to order the following skincare product from your store:\n\n` +
-      `✨ Product: ${name}\n` +
-      `💰 Price: ${price} ETB\n\n` +
-      `Please let me know how to proceed with payment and delivery details!`;
-
-    const encodedMessage = encodeURIComponent(baseMessage);
-
-    if (platform === "whatsapp") {
-      window.open(`https://wa.me/${BUSINESS_PHONE}?text=${encodedMessage}`, "_blank");
-    } else if (platform === "telegram") {
-      window.open(`https://t.me/${TELEGRAM_USERNAME}?text=${encodedMessage}`, "_blank");
-    }
-  };
+  const orderUrl = createWhatsAppUrl(
+    `Hello! I would like to order ${name} for ${price} ETB. Please share payment and delivery details.`,
+  );
 
   return (
     <div className="bg-white rounded-2xl p-3 sm:p-4 border border-[#F2E3D5] flex flex-col hover:border-[#E07A5F] hover:shadow-xs transition duration-300 group relative">
@@ -49,29 +33,24 @@ export default function ProductCard({ image, category, name, price }) {
         </span>
       </div>
 
-      {/* Direct Social Messaging Actions - Mobile Responsive Split Grid */}
-      <div className="grid grid-cols-2 gap-2 pt-2 mt-auto border-t border-[#F1E7DE]/40">
-
-        {/* Telegram */}
-        <button
-          type="button"
-          onClick={() => handleInstantOrder("telegram")}
-          className="w-full bg-[#FFFBF7] text-[#4A3B32] border border-[#F2E3D5] hover:bg-[#4A3B32] hover:text-white hover:border-[#4A3B32] py-2 rounded-xl text-[10px] font-serif font-bold transition flex items-center justify-center gap-1 leading-none whitespace-nowrap overflow-hidden cursor-pointer"
-        >
-          <i className="fa-brands fa-telegram text-[10px] flex-shrink-0"></i>
-          <span className="truncate">Telegram</span>
-        </button>
-
-        {/* WhatsApp */}
-        <button
-          type="button"
-          onClick={() => handleInstantOrder("whatsapp")}
-          className="w-full bg-[#E07A5F] text-white hover:bg-[#d0694e] py-2 rounded-xl text-[10px] font-serif font-bold transition flex items-center justify-center gap-1 leading-none whitespace-nowrap overflow-hidden cursor-pointer"
-        >
-          <i className="fa-brands fa-whatsapp text-[10px] flex-shrink-0"></i>
-          <span className="truncate">WhatsApp</span>
-        </button>
-
+      <div className="mt-auto border-t border-[#F1E7DE]/40 pt-2">
+        {orderUrl ? (
+          <a
+            href={orderUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex min-h-11 w-full items-center justify-center gap-2 rounded-lg bg-[#AD4B37] px-2 py-2 text-center text-xs font-semibold text-white transition hover:bg-[#913D2E] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
+          >
+            <i className="fa-brands fa-whatsapp" aria-hidden="true"></i>Order on WhatsApp
+          </a>
+        ) : (
+          <Link
+            to="/contact"
+            className="flex min-h-11 w-full items-center justify-center rounded-lg border border-[#C85D45] px-2 py-2 text-center text-xs font-semibold text-[#9F422F] transition hover:bg-[#FFF3EE] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4A3B32]"
+          >
+            Ask about this product
+          </Link>
+        )}
       </div>
 
     </div>

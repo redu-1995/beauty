@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 export default function AboutCTA() {
@@ -29,9 +28,9 @@ export default function AboutCTA() {
           <div className="pt-4 w-full sm:w-auto">
             <Link
               to="/products"
-              className="inline-block w-full sm:w-auto bg-[#E07A5F] text-white px-10 py-4 rounded-xl font-serif font-bold text-sm tracking-wide shadow-xs hover:bg-[#d0694e] hover:shadow-md hover:scale-[1.02] transition-all duration-300 text-center cursor-pointer"
+              className="inline-block w-full sm:w-auto bg-[#AD4B37] text-white px-10 py-4 rounded-xl font-serif font-bold text-sm tracking-wide shadow-xs hover:bg-[#913D2E] hover:shadow-md hover:scale-[1.02] transition-all duration-300 text-center cursor-pointer"
             >
-              Shop Collection
+              Shop Products
             </Link>
           </div>
 
